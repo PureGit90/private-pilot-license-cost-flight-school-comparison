@@ -1,0 +1,84 @@
+{
+  "name": "CFI Sacramento",
+  "category": "Hourly rates on the page",
+  "address": "Sacramento Executive Airport, California",
+  "url": "http://www.cfi.com/Pages/instruction-rates.htm",
+  "sources": [
+    "http://www.cfi.com/Pages/instruction-rates.htm",
+    "http://www.cfi.com/Pages/fleet-rates.php"
+  ],
+  "summary": "Sacramento flight school with a fleet table of eleven aircraft and tiered instructor rates.",
+  "differentiator": "Its own $10,900 private pilot example prices a Cessna 172 at $200 an hour, while its fleet table lists Cessna 172s at $220 to $250, so the example runs $20 to $50 an hour under the table.",
+  "pricing": "Cessna 172N at $220 to $230 an hour with fuel, instruction $55 to $75 an hour.",
+  "rateBasis": "wet",
+  "aircraft": [
+    {
+      "label": "Cessna 152",
+      "perHour": 160,
+      "perHourHigh": 170
+    },
+    {
+      "label": "Cessna 172N",
+      "perHour": 220,
+      "perHourHigh": 230
+    },
+    {
+      "label": "Cessna 172P",
+      "perHour": 230,
+      "perHourHigh": 250
+    },
+    {
+      "label": "Beechcraft Debonair 35-B33",
+      "perHour": 295
+    },
+    {
+      "label": "Piper Seminole PA-44",
+      "perHour": 475
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Flight instructor",
+      "perHour": 55,
+      "perHourHigh": 65,
+      "note": "$55 for basic training, $65 for advanced."
+    },
+    {
+      "label": "Chief pilot",
+      "perHour": 70,
+      "perHourHigh": 75,
+      "note": "$70 for basic training, $75 for advanced."
+    }
+  ],
+  "trainer": {
+    "label": "Cessna 172N",
+    "perHour": 220
+  },
+  "flightInstruction": {
+    "perHour": 55,
+    "perHourHigh": 65
+  },
+  "estimate": {
+    "amount": 10900,
+    "hoursBasis": "40 flight hours in a Cessna 172 at $200 an hour, plus 20 hours of ground and 30 hours of flight instruction at $55 and about $150 of materials",
+    "note": "Its example uses $200 an hour; its fleet table lists Cessna 172s at $220 to $250."
+  },
+  "feesNamed": [
+    "Rentals include fuel",
+    "No club membership or dues",
+    "Minimum one hour of flight time per reservation",
+    "Cancel at least 24 hours ahead",
+    "No prepayment required"
+  ],
+  "bestFor": "Students who want pay-as-you-go training with fuel included and no club fees.",
+  "skipIf": "You want the example total to match the fleet rates.",
+  "watchOut": [
+    "The $10,900 example uses $200 an hour for a Cessna 172; the fleet table lists $220 to $250.",
+    "Instruction rates vary by instructor and level ($55 to $75).",
+    "The pages show no date."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

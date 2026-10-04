@@ -1,0 +1,39 @@
+{
+  "name": "Butte Aviation",
+  "category": "Program prices, ranges and partial rates",
+  "address": "Butte, Montana",
+  "url": "https://www.butteaviation.com/post/how-much-does-flight-training-cost",
+  "sources": [
+    "https://www.butteaviation.com/post/how-much-does-flight-training-cost"
+  ],
+  "trainingModel": "part-61",
+  "summary": "Montana Part 61 flight school whose cost article works from a single $195 flight hour.",
+  "differentiator": "Works its cost example from a single $195 flight hour, so the $7,800 minimum is easy to check, but the article does not say what the $195 includes.",
+  "pricing": "Flight time at $195 an hour in its cost article; 40 hours is $7,800.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Flight hour, as used in its cost examples (what it includes is not stated)",
+      "perHour": 195
+    }
+  ],
+  "dualHourStated": {
+    "perHour": 195,
+    "note": "The article prices flight time at $195 an hour and does not split aircraft from instructor."
+  },
+  "estimate": {
+    "amount": 7800,
+    "hoursBasis": "40 hours at $195 an hour, the Part 61 minimum",
+    "note": "The article says most students need more than the minimum."
+  },
+  "bestFor": "Students in western Montana who want a rule-of-thumb figure.",
+  "skipIf": "You want a rate sheet; this is a blog article, not a price list.",
+  "watchOut": [
+    "A cost article, not a rate sheet.",
+    "$195 an hour is not split into aircraft and instructor.",
+    "It assumes the 40-hour Part 61 minimum."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "lastChecked": "2026-10-04"
+}

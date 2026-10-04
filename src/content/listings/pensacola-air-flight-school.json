@@ -1,0 +1,77 @@
+{
+  "name": "Pensacola Air Flight School",
+  "category": "Hourly rates on the page",
+  "address": "Pensacola International Airport, Florida",
+  "url": "https://kpnsair.com/rates-%26-faq",
+  "sources": [
+    "https://kpnsair.com/rates-%26-faq"
+  ],
+  "summary": "Flight school at Pensacola International Airport that teaches in fixed-wing aircraft and a helicopter.",
+  "differentiator": "Prices each kind of instruction separately (primary $60, instrument and complex $65, in your own airplane $70, group ground $30) and lists a helicopter at $475 an hour.",
+  "pricing": "Piper Warrior at $180 an hour, Archer at $190, instruction $60 an hour.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Piper Warrior 151 and 161",
+      "perHour": 180
+    },
+    {
+      "label": "Piper Cherokee 140 TAA",
+      "perHour": 190
+    },
+    {
+      "label": "Piper Archer 181",
+      "perHour": 190
+    },
+    {
+      "label": "Enstrom 280FX helicopter",
+      "perHour": 475
+    },
+    {
+      "label": "Redbird simulator",
+      "perHour": 60
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Private and commercial",
+      "perHour": 60
+    },
+    {
+      "label": "Instrument, complex and CFII",
+      "perHour": 65
+    },
+    {
+      "label": "In a personal airplane",
+      "perHour": 70
+    },
+    {
+      "label": "Helicopter instruction",
+      "perHour": 75
+    },
+    {
+      "label": "Group ground sessions",
+      "perHour": 30
+    }
+  ],
+  "trainer": {
+    "label": "Piper Warrior",
+    "perHour": 180
+  },
+  "flightInstruction": {
+    "perHour": 60
+  },
+  "feesNamed": [
+    "Students must carry $25,000 of rental insurance once they solo"
+  ],
+  "bestFor": "Students who want fixed-wing or helicopter training and a posted rate for each type of instruction.",
+  "skipIf": "You want an itemized private pilot total; we did not read the cost breakdown the page links to.",
+  "watchOut": [
+    "The page does not say whether aircraft rates include fuel.",
+    "Helicopter pricing says to ask for an estimate of the add-ons and initial costs."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-audit/
+.vercel/
+.env
+.env.*
+.DS_Store
+.playwright-mcp/
+.firecrawl/

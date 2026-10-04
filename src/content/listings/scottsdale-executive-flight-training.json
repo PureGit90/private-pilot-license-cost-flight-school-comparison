@@ -1,0 +1,87 @@
+{
+  "name": "Scottsdale Executive Flight Training",
+  "category": "Hourly rates on the page",
+  "address": "Scottsdale Airport, Arizona",
+  "url": "https://scottsdaleflighttraining.com/pricing/",
+  "sources": [
+    "https://scottsdaleflighttraining.com/pricing/",
+    "https://scottsdaleflighttraining.com/wp-content/uploads/SEFT-Rates-2026_08.pdf"
+  ],
+  "summary": "Scottsdale Airport school that publishes its rates in a PDF and quotes dry rates.",
+  "differentiator": "Quotes dry rates in a PDF, so its $144 Cessna 172N and $129 Cessna 172K look like the lowest headline rates here, but fuel, a 1% airport user fee and a 2.5% card fee come on top.",
+  "pricing": "Cessna 172N at $144 an hour dry, Cessna instruction $75 an hour.",
+  "rateBasis": "dry",
+  "aircraft": [
+    {
+      "label": "Cessna 152",
+      "perHour": 109
+    },
+    {
+      "label": "Cessna 172K",
+      "perHour": 129
+    },
+    {
+      "label": "Cessna 172N",
+      "perHour": 144
+    },
+    {
+      "label": "Cessna 172S G1000",
+      "perHour": 159
+    },
+    {
+      "label": "Cirrus SR20 G3",
+      "perHour": 279
+    },
+    {
+      "label": "Cirrus SR20 G6",
+      "perHour": 329
+    },
+    {
+      "label": "Cirrus SR22T G6, four aircraft",
+      "perHour": 449,
+      "perHourHigh": 499
+    },
+    {
+      "label": "Cessna BATD simulator",
+      "perHour": 19
+    },
+    {
+      "label": "Cirrus AATD simulator",
+      "perHour": 99
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Cessna instruction",
+      "perHour": 75
+    },
+    {
+      "label": "Cirrus instruction",
+      "perHour": 100
+    }
+  ],
+  "trainer": {
+    "label": "Cessna 172K",
+    "perHour": 129
+  },
+  "flightInstruction": {
+    "perHour": 75
+  },
+  "feesNamed": [
+    "Airport user fee: 1% on aircraft rentals, 2.5% on flight instruction",
+    "2.5% fee on credit card payments (eCheck or ACH has no fee)",
+    "Renter's insurance required: at least $30,000 for Cessna and $100,000 for Cirrus",
+    "Billed on Hobbs time"
+  ],
+  "bestFor": "Pilots and students at Scottsdale Airport who will price fuel separately.",
+  "skipIf": "You want an all-in hourly figure.",
+  "watchOut": [
+    "These are dry rates: fuel is extra, so add fuel before comparing with wet rates.",
+    "The pricing page shows no figures; they are in a PDF.",
+    "The PDF shows no date we could read; its file name suggests August 2026."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

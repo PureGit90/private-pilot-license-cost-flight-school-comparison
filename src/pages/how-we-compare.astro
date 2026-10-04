@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BASIS, CONFIDENCE, CONTACT_EMAIL, DATA_DATE_LABEL } from '../lib/site';
+
+const listings = await getCollection('listings');
+---
+<BaseLayout title="How We Compare Flight Schools: Method and Limits" description="How this site reads flight schools' own pages, what the fuel labels and the dual hour mean, what we have not done, and who is not included.">
+  <div class="wrap prose">
+    <p class="crumbs"><a href="/">Home</a> / How we compare</p>
+    <h1>How we compare</h1>
+    <p class="lead">This site records what flight schools publish about price, and nothing more.</p>
+
+    <h2>What we did</h2>
+    <p>On {DATA_DATE_LABEL} we opened each school's own pages: rate sheets, cost pages and, where a rate sheet was a PDF, the PDF. We copied the figures and statements that appear there, and the page address, into each listing. Where a rate appears only in an example (a cost breakdown, say), the listing says so.</p>
+
+    <h2>What we did not do</h2>
+    <ul>
+      <li>We did not request quotes, call schools, visit them or fly with them. <strong>We have not tested any school.</strong></li>
+      <li>We did not check safety records, accident history, instructor quality, pass rates or accreditation. Where a school says it runs a Part 141 or Part 61 program, we report that it says so.</li>
+      <li>We did not verify claims such as "largest" or "lowest". They are not repeated here as fact.</li>
+      <li>We did not use a school's booking or scheduling system, where prices can differ from the page.</li>
+    </ul>
+
+    <h2>What the fuel labels mean</h2>
+    <ul>
+      <li><strong>{BASIS.wet.label}.</strong> {BASIS.wet.note}</li>
+      <li><strong>{BASIS.dry.label}.</strong> {BASIS.dry.note}</li>
+      <li><strong>{BASIS['not-stated'].label}.</strong> {BASIS['not-stated'].note}</li>
+    </ul>
+    <p>"Not stated on the pages we read" means exactly that. A school may say it elsewhere on its site or on a call. Sales tax is a separate question: Windborne Flight says its rates include it, Roadrunner Flight School and AZ Flight Training say theirs do not, and most schools do not say.</p>
+
+    <h2>How the dual hour is built</h2>
+    <p>One hour of dual instruction is the school's aircraft rate for its trainer plus its flight instruction rate, added up. We build it only when the page gives both, or when the school states a combined rate itself. The trainer is the lowest-priced Cessna 172 the page lists, or, where there is none, the school's main single-engine trainer as listed. Where the instructor rate is a range, the dual hour is a range.</p>
+    <p>It is a way to compare, not a price anyone will quote you. It does not include fuel where the school says fuel is extra, nor deposits, minimums, taxes, airport fees or exam costs.</p>
+
+    <h2>What the private pilot estimates are</h2>
+    <p>Where a school publishes its own estimate for a private pilot certificate, the listing shows the amount and the hours it says it assumes. We do not make our own estimate. The FAA minimum is 40 flight hours (<a href="https://www.law.cornell.edu/cfr/text/14/61.109" rel="noopener" target="_blank">14 CFR 61.109</a>), and many students need more; a school's number built on the minimum is a floor.</p>
+
+    <h2>What the price labels mean</h2>
+    <ul>
+      <li><strong>{CONFIDENCE.vendor.label}.</strong> {CONFIDENCE.vendor.note}</li>
+      <li><strong>{CONFIDENCE.quote.label}.</strong> {CONFIDENCE.quote.note} We do not estimate a number.</li>
+    </ul>
+
+    <h2>Who is included, and who is not</h2>
+    <p>Flight schools in the United States with public pages that state rates, cost estimates or program prices in readable text. We found schools through search and by reading what ranks for cost questions. This is {listings.length} schools, not a census, and it leans toward schools that publish prices. It leaves out schools whose rates sit behind a login or a quote form, and schools whose pages gave us too little text to read. That is a limit of this first set, not a judgment.</p>
+
+    <h2>How schools are ordered</h2>
+    <p>Alphabetically, or by the figure in a table, never by anything we were paid. We do not rank schools. Nobody pays to be listed or to move up, and the order never reflects a commission.</p>
+
+    <h2>Money</h2>
+    <p>Some links may become affiliate links, and we may earn a commission if you buy through them. Whether a school or a course provider has an affiliate program does not decide whether it is listed, what we say about it or where it appears. See the <a href="/affiliate-disclosure/">affiliate disclosure</a>.</p>
+
+    <h2 id="corrections">Corrections</h2>
+    <p>Rates change often and each listing shows the date we read it. If something is out of date or wrong, tell us and we will check it against the school's page.{CONTACT_EMAIL && <> Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</>} Schools are welcome to send corrections to their own listing.</p>
+  </div>
+</BaseLayout>

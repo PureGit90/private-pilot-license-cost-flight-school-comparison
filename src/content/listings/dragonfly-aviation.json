@@ -1,0 +1,77 @@
+{
+  "name": "Dragonfly Aviation",
+  "category": "Hourly rates on the page",
+  "address": "Winder, Georgia (KWDR)",
+  "url": "https://www.dragonflyav.com/pricing-2/",
+  "sources": [
+    "https://www.dragonflyav.com/pricing-2/"
+  ],
+  "summary": "Diamond and Cirrus flight school at Winder airport in Georgia with a pay-as-you-go rate sheet.",
+  "differentiator": "Puts a membership price next to the hourly rate: $500 a year takes $15 off each single-engine hour, so the membership pays for itself after about 34 hours of flying.",
+  "pricing": "Diamond DA20 at $155 an hour, DA40 at $220, instruction $60 to $100 an hour.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Diamond DA20",
+      "perHour": 155
+    },
+    {
+      "label": "Diamond DA40",
+      "perHour": 220
+    },
+    {
+      "label": "Diamond DA42",
+      "perHour": 455
+    },
+    {
+      "label": "Cirrus G6 SR20",
+      "perHour": 275,
+      "note": "Listed as $275 with no per-hour label on the page."
+    },
+    {
+      "label": "Sport Cub",
+      "perHour": 160
+    },
+    {
+      "label": "GameBird GB1",
+      "perHour": 400
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Instructor, school aircraft",
+      "perHour": 60,
+      "perHourHigh": 100
+    },
+    {
+      "label": "Instructor, your own aircraft",
+      "perHour": 65,
+      "perHourHigh": 105
+    }
+  ],
+  "trainer": {
+    "label": "Diamond DA20",
+    "perHour": 155
+  },
+  "flightInstruction": {
+    "perHour": 60,
+    "perHourHigh": 100
+  },
+  "feesNamed": [
+    "Club program: $50 a month or $500 a year, saves $15 an hour on single-engine rentals and $20 an hour on multi-engine rentals",
+    "Discovery flights: $89 (DA20), $139 (DA40), $199 (SR20)",
+    "Multi-engine add-on package $6,000 (10 hours in a DA42, 1 hour in the simulator, ground instruction)",
+    "Simulator: $375 a year or $35 an hour"
+  ],
+  "bestFor": "Students who expect to fly often and want the lower member rate in a Diamond DA20.",
+  "skipIf": "You want one instructor rate and a stated wet or dry basis.",
+  "watchOut": [
+    "The Cirrus SR20 line shows $275 with no \"per hour\" label.",
+    "Instructor rates appear as ranges ($60 to $100) without saying what sets the rate.",
+    "The page does not say whether aircraft rates include fuel."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

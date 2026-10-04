@@ -1,0 +1,46 @@
+{
+  "name": "Air Trek North",
+  "category": "Program prices, ranges and partial rates",
+  "address": "Minneapolis area, Minnesota",
+  "url": "https://www.airtreknorth.com/rates.html",
+  "sources": [
+    "https://www.airtreknorth.com/rates.html"
+  ],
+  "pageDate": "2025-05",
+  "summary": "Minneapolis area school and club that publishes instructor rates and a club membership price.",
+  "differentiator": "Publishes instructor rates ($105 standard, $125 chief) and a club membership ($595 plus $150 a month), but its aircraft rates were not readable on the page, so no dual hour can be computed.",
+  "pricing": "Instruction $105 an hour standard, $125 chief; VIP club $595 plus $150 a month.",
+  "rateBasis": "wet",
+  "instruction": [
+    {
+      "label": "Standard instruction",
+      "perHour": 105,
+      "note": "Page heading shows May 2025."
+    },
+    {
+      "label": "Chief flight instructor",
+      "perHour": 125
+    },
+    {
+      "label": "Seaplane training in your airplane",
+      "perHour": 125
+    }
+  ],
+  "feesNamed": [
+    "VIP club membership $595 one time plus $150 a month, one-year minimum, auto-debit",
+    "Membership requires a private pilot certificate or higher",
+    "Credit card only",
+    "Prices are wet but exclude state and local taxes"
+  ],
+  "bestFor": "Certificated pilots looking at a membership club in the Minneapolis area.",
+  "skipIf": "You want aircraft rates from the page; we could not read them.",
+  "watchOut": [
+    "Aircraft hourly rates were not readable in the page text.",
+    "The membership has a one-year minimum.",
+    "Prices exclude state and local taxes."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

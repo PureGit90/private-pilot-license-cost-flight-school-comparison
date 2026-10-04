@@ -1,0 +1,62 @@
+{
+  "name": "Phoenix Flight Academy",
+  "category": "Hourly rates on the page",
+  "address": "Spanish Fork, Utah",
+  "url": "https://phoenixflightacademy.com/flight-training",
+  "sources": [
+    "https://phoenixflightacademy.com/flight-training"
+  ],
+  "pageDate": "2026-03-01",
+  "summary": "Utah flight school at Spanish Fork Airport with rates effective March 1, 2026 and both a minimum and an average private pilot total.",
+  "differentiator": "Publishes a $9,400 minimum and an $11,500 average total for a private pilot certificate; the average, 22% higher, adds the extra instruction and retakes the school says students usually need.",
+  "pricing": "Training aircraft $155 an hour with fuel (40-hour minimum), instruction $50 an hour.",
+  "rateBasis": "wet",
+  "aircraft": [
+    {
+      "label": "Training aircraft (model not named on the rate line), 40-hour minimum",
+      "perHour": 155
+    },
+    {
+      "label": "Piper PA28R-201 Arrow III, complex endorsement",
+      "perHour": 210
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Flight instruction, 20-hour minimum",
+      "perHour": 50
+    },
+    {
+      "label": "Complex endorsement instruction",
+      "perHour": 50
+    }
+  ],
+  "trainer": {
+    "label": "Training aircraft",
+    "perHour": 155
+  },
+  "flightInstruction": {
+    "perHour": 50
+  },
+  "estimate": {
+    "amount": 9400,
+    "hoursBasis": "FAA minimum hours: 20 hours of instruction at $50 and 40 hours of aircraft at $155",
+    "note": "The school's average total is $11,500 and includes additional instruction and test retakes."
+  },
+  "feesNamed": [
+    "Jeppesen private pilot kit $219.95",
+    "Written and practical tests $700",
+    "Medical exam $150",
+    "Headset $100 to $1,500 (rentable)"
+  ],
+  "bestFor": "Students near Spanish Fork Airport who want a minimum and an average total side by side.",
+  "skipIf": "You want the aircraft model named next to each rate.",
+  "watchOut": [
+    "The aircraft rate carries a 40-hour minimum and instruction a 20-hour minimum.",
+    "The $155 aircraft is not named on the rate line."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

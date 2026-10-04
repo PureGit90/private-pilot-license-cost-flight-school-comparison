@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME, CONTACT_EMAIL } from '../lib/site';
+---
+<BaseLayout title="Privacy Policy" description={`What data ${SITE_NAME} collects, what it does not collect, and your choices.`}>
+  <div class="wrap prose">
+    <p class="crumbs"><a href="/">Home</a> / Privacy policy</p>
+    <h1>Privacy policy</h1>
+    <p class="lead">This site does not ask you for personal information, has no accounts, and does not sell data.</p>
+
+    <h2>What we collect</h2>
+    <ul>
+      <li><strong>Server logs.</strong> Our hosting provider records standard request data such as IP address, browser type, pages requested and time, for security and operations.</li>
+      <li><strong>Analytics.</strong> We use Vercel Web Analytics to count page views. Vercel says it uses no third-party cookies and identifies a visitor only by a hash created from the request, which it discards after 24 hours, and that it does not collect identifiers that track you across other websites. Each page view can record the time, the page, the referring site, a rough location (country, region and city), your device type and operating system, and your browser. The data is used only as aggregate statistics.</li>
+      <li><strong>Advertising.</strong> We do not currently show advertising. If we add it, this policy will be updated first to name the provider and what it collects.</li>
+      <li><strong>Information you send us.</strong> If you contact us, we keep your message and address only to reply and to correct our listings.</li>
+    </ul>
+
+    <h2>Cookies and third parties</h2>
+    <p>This site does not set its own cookies, and its analytics does not use them. Fonts are served from this site, not a third party. When you follow a link to a school, that school and any affiliate network involved may set cookies on their own sites. Those are covered by their policies, not ours.</p>
+
+    <h2>Your choices</h2>
+    <p>You can browse without giving us any information. Depending on where you live, you may have rights to ask what personal data a site holds about you and to have it deleted. Because we hold almost no personal data, most requests will be answered by confirming that.</p>
+
+    <h2>Children</h2>
+    <p>This site is written for adults researching a purchase and is not directed at children under 13.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, we will update this page.</p>
+    {CONTACT_EMAIL && <p>Contact: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>}
+  </div>
+</BaseLayout>

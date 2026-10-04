@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+import { SITE_NAME, NOINDEX, NAV, DATA_DATE_LABEL } from '../lib/site';
+import barlow600 from '@fontsource/barlow-semi-condensed/files/barlow-semi-condensed-latin-600-normal.woff2?url';
+import barlow700 from '@fontsource/barlow-semi-condensed/files/barlow-semi-condensed-latin-700-normal.woff2?url';
+import serif from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
+
+export interface Props {
+  // The final <title>. Keep the main keyword first and the whole title under about 60 characters.
+  title: string;
+  // Under about 155 characters, specific, with a reason to click.
+  description: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  path?: string;
+}
+
+// noindex is derived here from PUBLIC_NOINDEX and nowhere else. Pages must never pass their own value.
+const { title, description, jsonLd, path = Astro.url.pathname } = Astro.props;
+const base = Astro.site ?? 'https://example.com';
+const ogImage = new URL('/og-image.png', base).toString();
+const pageUrl = new URL(path, base).toString();
+const ld = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {NOINDEX && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="preload" href={barlow700} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={barlow600} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={serif} as="font" type="font/woff2" crossorigin />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0b2a2a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script defer src="/_vercel/insights/script.js"></script>
+    {ld.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label={`${SITE_NAME} home`}>
+          <img src="/logo-mark.png" alt="" width="34" height="34" />
+          <span>{SITE_NAME}</span>
+        </a>
+        <nav class="nav" aria-label="Main">
+          {NAV.map((n) => <a href={n.href}>{n.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="links">
+          <a href="/how-we-compare/">How we compare</a>
+          <a href="/about/">About</a>
+          <a href="/corrections/">Corrections</a>
+          <a href="/affiliate-disclosure/">Affiliate disclosure</a>
+          <a href="/privacy-policy/">Privacy policy</a>
+        </div>
+        <p>Some links on this site may be affiliate links. We may earn a commission if you buy through them, at no extra cost to you. See the <a href="/affiliate-disclosure/">affiliate disclosure</a>.</p>
+        <p>Rates and fees change. Check each school before you enrol. Data last read {DATA_DATE_LABEL}.</p>
+      </div>
+    </footer>
+  </body>
+</html>

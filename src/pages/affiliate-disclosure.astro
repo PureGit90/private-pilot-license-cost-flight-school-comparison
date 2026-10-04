@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME, CONTACT_EMAIL } from '../lib/site';
+---
+<BaseLayout title="Affiliate Disclosure" description={`How ${SITE_NAME} earns money and how that does and does not affect what we list.`}>
+  <div class="wrap prose">
+    <p class="crumbs"><a href="/">Home</a> / Affiliate disclosure</p>
+    <h1>Affiliate disclosure</h1>
+    <p class="lead">Some links on this site may be affiliate links. If you click one and buy, we may earn a commission, at no extra cost to you.</p>
+    <p>This disclosure is provided under the U.S. Federal Trade Commission's guidelines on endorsements and testimonials (16 CFR Part 255).</p>
+
+    <h2>What this means</h2>
+    <ul>
+      <li>Links to schools or course providers may carry a tracking code. Those links are marked as sponsored in the page code. As of the date on this site's listings, no link here carries one.</li>
+      <li>We earn money only if you buy or sign up through one of those links. You pay the same price either way.</li>
+      <li>Whether a school or course provider offers an affiliate program, and how much it pays, does not decide whether we list it, where it appears, or what we say about it. Listings are in alphabetical order, and most listed schools have no affiliate program at all.</li>
+      <li>We may also show advertising in future. If we do, it will be labeled as advertising.</li>
+    </ul>
+
+    <h2>Why we say this</h2>
+    <p>You should know when a link may pay us. We would rather tell you plainly than have you find out later.</p>
+    {CONTACT_EMAIL && <p>Questions about this disclosure: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>}
+  </div>
+</BaseLayout>

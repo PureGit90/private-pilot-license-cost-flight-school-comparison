@@ -1,0 +1,34 @@
+{
+  "name": "Essence Flight School",
+  "category": "Program prices, ranges and partial rates",
+  "address": "Van Nuys, California",
+  "url": "https://essenceflight.com/flight-school-torrance/",
+  "sources": [
+    "https://essenceflight.com/flight-school-torrance/"
+  ],
+  "summary": "Van Nuys school that sells private pilot training as packages sized by hours.",
+  "differentiator": "Sells private pilot training as three packages by hours (40, 60 or 80 total) starting at $10,900, so you pick the hours assumption instead of guessing it.",
+  "pricing": "Private pilot from $10,900; discovery flights $229 to $499; no hourly rates on the page.",
+  "rateBasis": "not-stated",
+  "estimate": {
+    "amount": 10900,
+    "hoursBasis": "its Standard package, 40 total flight hours; the Comprehensive package is 60 hours and the Premium package 80",
+    "note": "Shown as \"From $10,900.\""
+  },
+  "feesNamed": [
+    "Discovery flights: $229 (Cessna 162 or DA20, one person, 60 minutes), $299 (Piper Warrior, two), $499 (Cirrus SR22 Turbo or Piper Seminole)",
+    "Training in a Cirrus SR22 Turbo instead of a standard trainer: +$300 an hour",
+    "Financing plans from $2,500 down"
+  ],
+  "bestFor": "Students who want to pick a package sized to the hours they expect to need.",
+  "skipIf": "You want an hourly rate to compare with other schools; none appears on the page we read.",
+  "watchOut": [
+    "Only the starting price is shown for the private pilot package.",
+    "No hourly aircraft or instructor rates.",
+    "Cirrus training adds $300 an hour."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

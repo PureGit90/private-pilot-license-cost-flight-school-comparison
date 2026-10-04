@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME, TAGLINE, SITE_DESCRIPTION, CATEGORIES, HERO_PANEL, DATA_DATE_LABEL } from '../lib/site';
+import { alpha, duals, stats, fmtUsd } from '../lib/rates';
+
+const listings = (await getCollection('listings')).sort(alpha);
+const withHourly = listings.filter((l) => l.data.aircraft.length > 0 || l.data.instruction.length > 0);
+const d = stats(duals(listings).map((x) => x.d.low));
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: SITE_NAME,
+    itemListElement: listings.map((listing, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: listing.data.name,
+      url: new URL(`/listings/${listing.id}/`, Astro.site ?? 'https://example.com').toString(),
+    })),
+  },
+];
+---
+<BaseLayout title="Private Pilot License Cost: What Flight Schools Publish" description={SITE_DESCRIPTION} jsonLd={jsonLd}>
+  <section class="hero">
+    <div class={HERO_PANEL ? 'wrap' : 'wrap solo'}>
+      <div>
+        <h1>{TAGLINE}</h1>
+        <p>{SITE_DESCRIPTION}</p>
+        <p><a class="btn" href="/private-pilot-license-cost/">See what schools publish</a></p>
+        <p class="note">Aircraft and instruction are priced by the hour, so one hour of dual instruction is the fairest single number. Here it runs {fmtUsd(d.min!)} to {fmtUsd(d.max!)} across {d.n} schools, and the labels explain why.</p>
+      </div>
+      {HERO_PANEL && (
+        <div class="sheet" aria-label={HERO_PANEL.title}>
+          <h2>{HERO_PANEL.title}</h2>
+          {HERO_PANEL.subtitle && <p class="trip">{HERO_PANEL.subtitle}</p>}
+          <dl>
+            {HERO_PANEL.rows.map((r) => (
+              <div class={`row${r.kind ? ' ' + r.kind : ''}`}><dt>{r.label}</dt><dd>{r.value}</dd></div>
+            ))}
+          </dl>
+          <p class="src"><a href={HERO_PANEL.source.href}>{HERO_PANEL.source.label}</a>, read {DATA_DATE_LABEL}.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <div class="wrap">
+    <ul class="facts">
+      <li><strong>{listings.length}</strong><span>flight schools read</span></li>
+      <li><strong>{withHourly.length}</strong><span>print hourly aircraft or instruction rates</span></li>
+      <li><strong>{d.n}</strong><span>let us work out one dual hour</span></li>
+    </ul>
+
+    <h2>Where to start</h2>
+    <ul class="paths">
+      {CATEGORIES.map((c) => (
+        <li>
+          <h3><a href={`/category/${c.slug}/`}>{c.name}</a></h3>
+          <p>{listings.filter((l) => l.data.category === c.name).length} schools. {c.intro}</p>
+        </li>
+      ))}
+      <li>
+        <h3><a href="/private-pilot-license-cost/">Cost, side by side</a></h3>
+        <p>One hour of dual instruction at every school that lets us work it out, each school's own private pilot estimate with the hours it assumes, and the answers to the questions people search for.</p>
+      </li>
+    </ul>
+    <div class="panel">
+      <h2>What this site is not</h2>
+      <p>It does not rank schools, and nobody pays to be listed or placed higher. It does not say which school is safest or best to learn at. Figures are read from each school's own pages on {DATA_DATE_LABEL}. Read <a href="/how-we-compare/">how we compare</a> and <a href="/about/">who runs this site</a>.</p>
+    </div>
+  </div>
+</BaseLayout>

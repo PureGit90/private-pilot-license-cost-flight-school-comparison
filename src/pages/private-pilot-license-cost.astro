@@ -1,0 +1,141 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BASIS, DATA_DATE_LABEL } from '../lib/site';
+import { alpha, duals, estimates, cessna172, stats, fmtUsd, fmtRange } from '../lib/rates';
+
+const listings = (await getCollection('listings')).sort(alpha);
+const dh = duals(listings).sort((a, b) => a.d.low - b.d.low);
+const dhStats = stats(dh.map((x) => x.d.low));
+const ests = estimates(listings);
+const c172 = cessna172(listings);
+const SCALE = 350;
+const pct = (n: number) => Math.min(100, (n / SCALE) * 100);
+const lowEst = ests[0];
+const highEst = ests[ests.length - 1];
+const hourlyCount = listings.filter((l) => l.data.aircraft.length > 0 || l.data.instruction.length > 0).length;
+const r = (n: number | null) => (n === null ? 'n/a' : fmtUsd(Math.round(n * 100) / 100));
+
+const faq = [
+  {
+    q: 'How much does a flight lesson cost per hour?',
+    a: `Across the ${dhStats.n} schools where we can work out one hour of dual instruction (aircraft plus instructor), the published figures run from ${r(dhStats.min)} to ${r(dhStats.max)}, with a median of ${r(dhStats.median)}. These are not like for like: some figures include fuel, some do not, and one includes sales tax. Read ${DATA_DATE_LABEL}. They are not quotes.`,
+  },
+  {
+    q: 'How much does it cost to rent a Cessna 172 for training?',
+    a: `${c172.all.n} schools list a Cessna 172 as their trainer, at ${r(c172.all.min)} to ${r(c172.all.max)} an hour. Splitting by what each page says about fuel: ${c172.wet.n} say fuel is included (${r(c172.wet.min)} to ${r(c172.wet.max)}), ${c172.dry.n} say it is not (${r(c172.dry.min)} to ${r(c172.dry.max)}), and ${c172.notStated.n} do not say (${r(c172.notStated.min)} to ${r(c172.notStated.max)}). Compare dry rates only after adding fuel.`,
+  },
+  {
+    q: 'Why do schools quote such different private pilot totals?',
+    a: `Mostly because they assume different numbers of hours. The FAA minimum is 40 flight hours (14 CFR 61.109). Among the ${ests.length} estimates we read, the lowest is ${fmtUsd(lowEst.e.amount)} (${lowEst.l.data.name}, ${lowEst.e.hoursBasis.split(':')[0]}) and the highest is ${fmtUsd(highEst.e.amount)} (${highEst.l.data.name}). A total built on the minimum hours is a floor, not a forecast. Ask any school how many hours its number assumes.`,
+  },
+  {
+    q: 'Is the hourly rate the price I will pay?',
+    a: 'No. Schools name different extras: a refundable deposit, a fuel surcharge, an airport user fee, a card fee, minimum hours, exam fees and gear. The listings record the ones each page names. A figure with none named may still have them.',
+  },
+];
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Private pilot license cost: what flight schools publish', description: 'Hourly rates, one dual hour and private pilot estimates published by flight schools, with the fuel basis labeled.' },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
+const total = listings.length;
+---
+<BaseLayout title="Private Pilot License Cost: Published Flight School Rates" description={`What ${hourlyCount} flight schools publish per hour for aircraft and instruction, one dual hour from ${r(dhStats.min)} to ${r(dhStats.max)}, and each school's own estimate.`.slice(0, 155)} jsonLd={jsonLd}>
+  <div class="wrap prose wide">
+    <p class="crumbs"><a href="/">Home</a> / Cost</p>
+    <h1>Private pilot license cost: what flight schools publish</h1>
+    <p class="lead">Each school's own pages, read on {DATA_DATE_LABEL}. These are published rates, not quotes. One hour of dual instruction runs {r(dhStats.min)} to {r(dhStats.max)} across {dhStats.n} schools.</p>
+
+    <div class="panel">
+      <h2>Read this before the numbers</h2>
+      <p>The tables are <strong>not like for like</strong>. Schools publish different things under the same words:</p>
+      <ul>
+        <li><strong>{BASIS.wet.label}.</strong> {BASIS.wet.note}</li>
+        <li><strong>{BASIS.dry.label}.</strong> {BASIS.dry.note} Add fuel before comparing a dry rate with a wet one.</li>
+        <li><strong>{BASIS['not-stated'].label}.</strong> {BASIS['not-stated'].note}</li>
+      </ul>
+      <p>Sales tax differs too. Windborne Flight says its rates include Wisconsin sales tax. Roadrunner Flight School and AZ Flight Training say theirs do not. Most schools do not say.</p>
+    </div>
+
+    <h2>One hour of dual instruction</h2>
+    <p>Aircraft rate plus instructor rate for one hour with an instructor, shown only where the page gives both or states the combined figure. The bar's color says what the page says about fuel.</p>
+    <div class="legend">
+      <span class="tag wet">Fuel included</span>
+      <span class="tag dry">Fuel extra</span>
+      <span class="tag nostated">Fuel not stated</span>
+    </div>
+    <div class="table-wrap">
+      <table class="stack rate-table">
+        <caption>One dual hour, {dh.length} schools, lowest first</caption>
+        <thead><tr><th scope="col">School</th><th scope="col">One dual hour</th><th scope="col">Fuel</th><th scope="col">Range<div class="axis" aria-hidden="true"><span>$0</span><span>$50</span><span>$100</span><span>$150</span><span>$200</span><span>$250</span><span>$300</span><span>$350</span></div></th></tr></thead>
+        <tbody>
+          {dh.map(({ l, d }) => (
+            <tr>
+              <th scope="row"><a href={`/listings/${l.id}/`}>{l.data.name}</a>{d.kind === 'stated' && <span class="small"><br />School's own combined figure</span>}</th>
+              <td data-label="One dual hour" class="num">{fmtRange(d.low, d.high)}</td>
+              <td data-label="Fuel"><span class={`tag ${BASIS[l.data.rateBasis].tag}`}>{BASIS[l.data.rateBasis].label}</span></td>
+              <td data-label="Range">
+                <div class="bar" aria-hidden="true">
+                  <span class={`fill ${l.data.rateBasis === 'wet' ? 'wet' : l.data.rateBasis === 'dry' ? 'dry' : ''}`} style={`left:${pct(d.low)}%;width:${d.high === null ? 1.5 : Math.max(1.5, pct(d.high) - pct(d.low))}%`}></span>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="small">The marker is a single figure unless the school gives a range for instruction. Schools with no hourly rates are on the <a href="/all/">all schools</a> page.</p>
+
+    <h2>The Cessna 172, by what each page says about fuel</h2>
+    <div class="table-wrap">
+      <table class="stack rate-table">
+        <caption>Cessna 172 trainer rate per hour (lowest listed on each page)</caption>
+        <thead><tr><th scope="col">What the page says</th><th scope="col">Schools</th><th scope="col">Lowest</th><th scope="col">Median</th><th scope="col">Highest</th></tr></thead>
+        <tbody>
+          {([['wet', c172.wet], ['dry', c172.dry], ['not-stated', c172.notStated]] as const).map(([k, s]) => (
+            <tr>
+              <th scope="row"><span class={`tag ${BASIS[k].tag}`}>{BASIS[k].label}</span></th>
+              <td data-label="Schools" class="num">{s.n}</td>
+              <td data-label="Lowest" class="num">{r(s.min)}</td>
+              <td data-label="Median" class="num">{r(s.median)}</td>
+              <td data-label="Highest" class="num">{r(s.max)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Small samples: {c172.all.n} schools in all. The list is the schools we read, not every school.</p>
+
+    <h2>What each school says a private pilot certificate costs</h2>
+    <p>Every estimate rests on a number of hours. The FAA sets a floor of 40 flight hours (<a href="https://www.law.cornell.edu/cfr/text/14/61.109" rel="noopener" target="_blank">14 CFR 61.109</a>), and some schools price exactly that.</p>
+    <div class="table-wrap">
+      <table class="stack rate-table">
+        <caption>{ests.length} school estimates, lowest first</caption>
+        <thead><tr><th scope="col">School</th><th scope="col">Estimate</th><th scope="col">Hours and items it assumes</th></tr></thead>
+        <tbody>
+          {ests.map(({ l, e }) => (
+            <tr>
+              <th scope="row"><a href={`/listings/${l.id}/`}>{l.data.name}</a></th>
+              <td data-label="Estimate" class="num">{fmtUsd(e.amount)}</td>
+              <td data-label="Hours and items it assumes">{e.hoursBasis}{e.note ? `. ${e.note}` : ''}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Common questions</h2>
+    <dl class="faq">
+      {faq.map((f) => (<><dt>{f.q}</dt><dd>{f.a}</dd></>))}
+    </dl>
+
+    <h2>How to use this</h2>
+    <ul>
+      <li>Ask each school whether its aircraft rate includes fuel and tax, and whether instruction is billed for ground time.</li>
+      <li>Ask how many hours its private pilot estimate assumes, and what happens to the price if you need more.</li>
+      <li>Check for a deposit, minimum hours, a fuel surcharge or card fees. The listings record the ones each page names.</li>
+      <li>If a school lists no hourly rate, that is a finding, not a mark against it. Many sell by program. They are on the <a href="/category/program-prices-and-ranges/">program prices page</a>.</li>
+    </ul>
+    <p class="small">{total} schools read. We have not flown with, visited or called any of them. Corrections go through the <a href="/corrections/">corrections page</a>.</p>
+  </div>
+</BaseLayout>

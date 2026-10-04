@@ -1,0 +1,60 @@
+{
+  "name": "Epic Flight Academy",
+  "category": "Program prices, ranges and partial rates",
+  "url": "https://epicflightacademy.com/how-much-does-flight-school-cost/",
+  "sources": [
+    "https://epicflightacademy.com/how-much-does-flight-school-cost/"
+  ],
+  "pageDate": "2026-05-21",
+  "summary": "Large flight school that prices its programs in full and lists a handful of hourly rates.",
+  "differentiator": "Lists a Cessna 172 hour at $298.20 for one student and $149.10 for a time-building flight shared with a partner, next to a $36,147 private pilot course, the highest private pilot estimate in this set.",
+  "pricing": "Private pilot course estimated at $36,147 (about 3 months); Cessna 172 flight $298.20 an hour.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Cessna 172 flight, one student",
+      "perHour": 298.2
+    },
+    {
+      "label": "Time-building flight in a Cessna 172 with a partner",
+      "perHour": 149.1
+    },
+    {
+      "label": "TruFlite C172 simulator, with a partner",
+      "perHour": 170
+    }
+  ],
+  "instruction": [
+    {
+      "label": "One-on-one ground instruction",
+      "perHour": 115
+    },
+    {
+      "label": "Pre and post activity building",
+      "perHour": 115
+    }
+  ],
+  "dualHourStated": {
+    "perHour": 298.2,
+    "note": "Listed as \"Flight, C172 Solo: $298.20 hr.\" The page does not say what the hourly figure includes."
+  },
+  "estimate": {
+    "amount": 36147,
+    "hoursBasis": "not stated on the page; the course is described as taking about 3 months",
+    "note": "Prices are for U.S. students effective April 1, 2026."
+  },
+  "feesNamed": [
+    "Ground school $500"
+  ],
+  "bestFor": "Career-track students who want a full-program price in one line.",
+  "skipIf": "You want a pay-as-you-go hourly rate to compare directly; this page prices programs.",
+  "watchOut": [
+    "Its $36,147 private pilot estimate is the highest here and the page does not give its hours.",
+    "Hourly figures do not say what they include.",
+    "Prices are for U.S. students effective April 1, 2026."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Illinois Aviation Academy",
+  "category": "Hourly rates on the page",
+  "address": "West Chicago, Illinois",
+  "url": "https://www.illinoisaviation.com/flight-training/",
+  "sources": [
+    "https://www.illinoisaviation.com/flight-training/"
+  ],
+  "trainingModel": "part-141",
+  "summary": "West Chicago school that runs a Part 141 career program and prices its private pilot course to the cent.",
+  "differentiator": "Adds its plane ($206.45) and instructor ($76.18) rates into a $282.63 dual hour, and shows two private pilot totals ($19,346.59 and $15,763.89) built from different hour mixes, which makes the cost of simulator time visible.",
+  "pricing": "Plane $206.45 an hour plus instructor $76.18, a stated $282.63 dual hour.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Plane (single-engine trainer)",
+      "perHour": 206.45
+    },
+    {
+      "label": "TAA aircraft",
+      "perHour": 223.55
+    },
+    {
+      "label": "AATD simulator",
+      "perHour": 148.84
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Instructor",
+      "perHour": 76.18
+    },
+    {
+      "label": "Ground training, stage checks",
+      "perHour": 99.23
+    }
+  ],
+  "trainer": {
+    "label": "Plane (single-engine trainer)",
+    "perHour": 206.45
+  },
+  "flightInstruction": {
+    "perHour": 76.18
+  },
+  "estimate": {
+    "amount": 19346.59,
+    "hoursBasis": "35 flight hours with instructor, 5 solo hours, 3 simulator hours and 37 hours of ground school, plus stage checks, medical, written exam, examiner fee and books",
+    "note": "A second block on the page shows $15,763.89 for 21 hours with instructor and 12 simulator hours."
+  },
+  "feesNamed": [
+    "Part 141 enrollment fee $210",
+    "Examiner fee $840 plus in-house aircraft time",
+    "Written exam $175",
+    "FAA medical $125"
+  ],
+  "bestFor": "Students who want a Part 141 program priced down to the cent.",
+  "skipIf": "You want a single hourly rate and no stage-check charges.",
+  "watchOut": [
+    "Two different totals appear on one page; check which hour mix you are buying.",
+    "Stage-check hours cost more ($99.23 ground, $305.68 flight) than ordinary instruction.",
+    "The page does not say whether the plane rate includes fuel."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "lastChecked": "2026-10-04"
+}

@@ -1,0 +1,101 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CONFIDENCE, BASIS, TRAINING_MODEL, categoryByName, DATA_DATE_LABEL } from '../../lib/site';
+import { dual, fmtUsd, fmtRange } from '../../lib/rates';
+
+export async function getStaticPaths() {
+  const listings = await getCollection('listings');
+  return listings.map((listing) => ({
+    params: { id: listing.id },
+    props: { listing },
+  }));
+}
+
+const { listing } = Astro.props;
+const d = listing.data;
+const conf = CONFIDENCE[d.pricingConfidence];
+const basis = BASIS[d.rateBasis];
+const href = d.affiliateUrl ?? d.url;
+const cat = categoryByName(d.category);
+const dh = dual(listing);
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: d.name,
+    description: d.summary,
+    url: d.url,
+    ...(d.address ? { address: d.address } : {}),
+  },
+];
+---
+<BaseLayout title={`${d.name} Flight Training Cost and Rates`} description={`${d.summary} Read ${d.lastChecked}.`.slice(0, 155)} jsonLd={jsonLd}>
+  <div class="wrap prose wide">
+    <p class="crumbs"><a href="/">Home</a> / <a href="/all/">All schools</a> / {d.name}</p>
+    <h1>{d.name}</h1>
+    <div class="meta">
+      <span class={`tag ${conf.tone}`}>{conf.label}</span>
+      <span class={`tag ${basis.tag}`}>{basis.label}</span>
+      {cat && <span class="tag neutral">{cat.short}</span>}
+      <span class="tag neutral">Read {d.lastChecked}</span>
+    </div>
+    <p class="lead">{d.summary}</p>
+    {d.address && <p class="small">{d.address}. {TRAINING_MODEL[d.trainingModel]}.</p>}
+    <p><a class="btn" href={href} rel="sponsored" target="_blank">Go to {d.name}</a></p>
+
+    <div class="panel">
+      <h2>What sets it apart</h2>
+      <p>{d.differentiator}</p>
+    </div>
+
+    {d.pricing && (<><h2>What the page prints</h2><p>{d.pricing}</p><p class="small">{conf.note} {basis.note}{d.pageDate ? ` The page itself shows the date ${d.pageDate}.` : ' The page shows no date.'}</p></>)}
+
+    {(d.aircraft.length > 0 || d.instruction.length > 0) && (
+      <div class="table-wrap">
+        <table class="rate-table">
+          <caption>Published hourly rates, as the page words them</caption>
+          <thead><tr><th scope="col">Item</th><th scope="col">Per hour</th><th scope="col">Note</th></tr></thead>
+          <tbody>
+            {d.aircraft.map((r) => (<tr><th scope="row">{r.label}</th><td class="num">{fmtRange(r.perHour, r.perHourHigh)}</td><td>{r.note ?? ''}</td></tr>))}
+            {d.instruction.map((r) => (<tr><th scope="row">Instruction: {r.label}</th><td class="num">{fmtRange(r.perHour, r.perHourHigh)}</td><td>{r.note ?? ''}</td></tr>))}
+          </tbody>
+        </table>
+      </div>
+    )}
+
+    {dh && (
+      <div class="panel">
+        <h2>One dual hour</h2>
+        <p><strong>{fmtRange(dh.low, dh.high)} per hour.</strong> {dh.note} {dh.kind === 'sum' ? 'This adds the two published rates. It is not a quote, and it is not like for like with schools that include different things.' : 'The school states this figure itself.'}</p>
+      </div>
+    )}
+
+    {d.estimate && (
+      <div class="panel">
+        <h2>The school's own private pilot estimate</h2>
+        <p><strong>{fmtUsd(d.estimate.amount)}.</strong> Hours it assumes: {d.estimate.hoursBasis}.{d.estimate.note ? ` ${d.estimate.note}` : ''}</p>
+        <p class="small">The FAA minimum is 40 flight hours (<a href="https://www.law.cornell.edu/cfr/text/14/61.109" rel="noopener" target="_blank">14 CFR 61.109</a>). An estimate built on fewer hours than a student needs will be too low.</p>
+      </div>
+    )}
+
+    {d.feesNamed.length > 0 && (<><h2>Fees and terms the page names</h2><ul>{d.feesNamed.map((f) => <li>{f}</li>)}</ul></>)}
+
+    {(d.bestFor || d.skipIf) && (
+      <div class="two">
+        {d.bestFor && <div><strong>Best for</strong><p>{d.bestFor}</p></div>}
+        {d.skipIf && <div><strong>Skip it if</strong><p>{d.skipIf}</p></div>}
+      </div>
+    )}
+
+    {d.watchOut.length > 0 && (<><h2>Watch out for</h2><ul>{d.watchOut.map((w) => <li>{w}</li>)}</ul></>)}
+
+    {d.sources.length > 0 && (
+      <>
+        <h2>Pages we read</h2>
+        <ul class="sources">{d.sources.map((s) => <li><a href={s} rel="noopener" target="_blank">{s}</a></li>)}</ul>
+      </>
+    )}
+    <p class="small">We read these pages on {DATA_DATE_LABEL}. Rates change. If this is out of date, <a href="/corrections/">tell us</a>.</p>
+  </div>
+</BaseLayout>

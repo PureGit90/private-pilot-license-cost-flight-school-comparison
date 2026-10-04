@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BASIS, categoryByName } from '../lib/site';
+import { alpha, dual, fmtUsd, fmtRange } from '../lib/rates';
+
+const listings = (await getCollection('listings')).sort(alpha);
+const trainerCell = (l: any) => (l.data.trainer ? `${fmtUsd(l.data.trainer.perHour)} (${l.data.trainer.label})` : 'Not published');
+const instrCell = (l: any) => (l.data.flightInstruction ? fmtRange(l.data.flightInstruction.perHour, l.data.flightInstruction.perHourHigh) : l.data.instruction[0] ? fmtRange(l.data.instruction[0].perHour, l.data.instruction[0].perHourHigh) : 'Not published');
+---
+<BaseLayout title={`Flight Schools Compared: ${listings.length} Schools and Their Rates`} description={`${listings.length} flight schools, alphabetical: aircraft rate, instruction rate, one dual hour and the school's own private pilot estimate, with sources.`}>
+  <div class="wrap prose wide">
+    <p class="crumbs"><a href="/">Home</a> / All schools</p>
+    <h1>All {listings.length} flight schools</h1>
+    <p class="lead">Listed alphabetically. Nobody pays to be listed or placed higher. Rates are as each school's page states them, and the fuel label matters: wet means fuel is included, dry means it is not.</p>
+    <div class="table-wrap">
+      <table class="stack rate-table">
+        <caption>Published rates and the school's own private pilot estimate</caption>
+        <thead><tr><th scope="col">School</th><th scope="col">Fuel in the aircraft rate</th><th scope="col">Trainer rate per hour</th><th scope="col">Instruction per hour</th><th scope="col">One dual hour</th><th scope="col">Its own private pilot estimate</th></tr></thead>
+        <tbody>
+          {listings.map((l) => {
+            const dh = dual(l);
+            return (
+              <tr>
+                <th scope="row"><a href={`/listings/${l.id}/`}>{l.data.name}</a><br /><span class="small">{l.data.address ?? 'Location not stated'}</span></th>
+                <td data-label="Fuel in the aircraft rate"><span class={`tag ${BASIS[l.data.rateBasis].tag}`}>{BASIS[l.data.rateBasis].label}</span></td>
+                <td data-label="Trainer rate per hour">{trainerCell(l)}</td>
+                <td data-label="Instruction per hour">{instrCell(l)}</td>
+                <td data-label="One dual hour" class="num">{dh ? fmtRange(dh.low, dh.high) : 'Not worked out'}</td>
+                <td data-label="Its own private pilot estimate" class="num">{l.data.estimate ? fmtUsd(l.data.estimate.amount) : 'None on the page'}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+    <p class="small">One dual hour is the trainer rate plus the flight instruction rate, worked out only when the page gives both, or the school's own combined figure. See <a href="/how-we-compare/">how we compare</a> for what it does and does not mean. Categories: {['hourly-rates-on-the-page', 'program-prices-and-ranges'].map((s, i) => <>{i > 0 && ', '}<a href={`/category/${s}/`}>{s === 'hourly-rates-on-the-page' ? 'schools with hourly rates' : 'program prices and ranges'}</a></>)}.</p>
+  </div>
+</BaseLayout>

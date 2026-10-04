@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CATEGORIES, BASIS } from '../../lib/site';
+import { alpha, dual, fmtRange, fmtUsd } from '../../lib/rates';
+
+export function getStaticPaths() {
+  return CATEGORIES.map((c) => ({ params: { slug: c.slug }, props: { cat: c } }));
+}
+const { cat } = Astro.props;
+const listings = (await getCollection('listings')).filter((l) => l.data.category === cat.name).sort(alpha);
+---
+<BaseLayout title={cat.seoTitle} description={`${listings.length} flight schools in this group. ${cat.intro}`.slice(0, 155)}>
+  <div class="wrap prose wide">
+    <p class="crumbs"><a href="/">Home</a> / {cat.name}</p>
+    <h1>{cat.name}</h1>
+    <p class="lead">{cat.intro}</p>
+    <div class="table-wrap">
+      <table class="stack rate-table">
+        <caption>{listings.length} schools, alphabetical</caption>
+        <thead><tr><th scope="col">School</th><th scope="col">What the page prints</th><th scope="col">Fuel in the aircraft rate</th><th scope="col">One dual hour</th></tr></thead>
+        <tbody>
+          {listings.map((l) => {
+            const dh = dual(l);
+            return (
+              <tr>
+                <th scope="row"><a href={`/listings/${l.id}/`}>{l.data.name}</a><br /><span class="small">{l.data.address ?? 'Location not stated'}</span></th>
+                <td data-label="What the page prints">{l.data.pricing ?? 'No price on the pages we read'}</td>
+                <td data-label="Fuel in the aircraft rate"><span class={`tag ${BASIS[l.data.rateBasis].tag}`}>{BASIS[l.data.rateBasis].label}</span></td>
+                <td data-label="One dual hour" class="num">{dh ? fmtRange(dh.low, dh.high) : 'Not worked out'}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      {listings.map((l) => <li><strong><a href={`/listings/${l.id}/`}>{l.data.name}</a>:</strong> {l.data.summary}</li>)}
+    </ul>
+  </div>
+</BaseLayout>

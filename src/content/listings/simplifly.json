@@ -1,0 +1,32 @@
+{
+  "name": "SimpliFly",
+  "category": "Program prices, ranges and partial rates",
+  "address": "Mesa, Arizona",
+  "url": "https://simpliflyco.com/approximate-pilot-training-costs/",
+  "sources": [
+    "https://simpliflyco.com/approximate-pilot-training-costs/"
+  ],
+  "summary": "Mesa flight school that gives a budget range and points to an interactive cost calculator.",
+  "differentiator": "Gives one budget range ($18,000 to $20,000 for private pilot fixed wing) and points to a calculator, so its rates are not readable without running the tool.",
+  "pricing": "Budget about $18,000 to $20,000 for a fixed-wing private pilot certificate.",
+  "rateBasis": "not-stated",
+  "estimate": {
+    "amount": 18000,
+    "hoursBasis": "not stated on the page; the calculator on the page did not show figures without scripts",
+    "note": "The page gives a range of $18,000 to $20,000."
+  },
+  "feesNamed": [
+    "Checkride fees about $1,500 for most checkrides, about $2,500 for the CFI initial",
+    "Written tests about $175 per certificate"
+  ],
+  "bestFor": "Students who want a quick budget range and will use the calculator.",
+  "skipIf": "You want hourly rates on the page.",
+  "watchOut": [
+    "No hourly rates in the page text we read.",
+    "The calculator showed placeholder zeros without scripts, so we did not use it."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

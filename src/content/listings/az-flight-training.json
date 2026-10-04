@@ -1,0 +1,58 @@
+{
+  "name": "AZ Flight Training",
+  "category": "Hourly rates on the page",
+  "address": "Arizona (city not shown on the home page)",
+  "url": "http://azflighttraining.com/",
+  "sources": [
+    "http://azflighttraining.com/"
+  ],
+  "summary": "Arizona flight school that posts instructor rates and a minimum-hours private pilot cost example.",
+  "differentiator": "Its $8,900 private pilot example is the lowest total in this set, but it assumes only the 40-hour FAA minimum, which the page itself says most students exceed.",
+  "pricing": "Instruction $65 an hour, discovery flight $99 special, Cessna 172 at $135 an hour in its cost example.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Cessna 172, as used in its cost example",
+      "perHour": 135,
+      "note": "Appears in the cost example, not in a rate table."
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Flight instruction",
+      "perHour": 65
+    },
+    {
+      "label": "Ground instruction",
+      "perHour": 65
+    }
+  ],
+  "trainer": {
+    "label": "Cessna 172 (cost example)",
+    "perHour": 135
+  },
+  "flightInstruction": {
+    "perHour": 65
+  },
+  "estimate": {
+    "amount": 8900,
+    "hoursBasis": "the FAA minimum: 40 hours of flight time at $135, 20 hours dual at $65, 15 hours of ground instruction at $65",
+    "note": "Not including tax. The page says the average private pilot needs more than 50 hours."
+  },
+  "feesNamed": [
+    "Discovery flight $99 special",
+    "Simulator or VR experience $50",
+    "Knowledge test $150 and practical test $750 in its example"
+  ],
+  "bestFor": "Students who want the lowest published minimum-hours total.",
+  "skipIf": "You want a realistic total; add hours to the example.",
+  "watchOut": [
+    "The example uses FAA minimum hours; the page says the average student needs 50 or more.",
+    "No rate table; the $135 Cessna 172 figure appears only in the cost example.",
+    "Tax is not included."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

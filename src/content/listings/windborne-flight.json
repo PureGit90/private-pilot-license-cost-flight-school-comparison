@@ -1,0 +1,57 @@
+{
+  "name": "Windborne Flight",
+  "category": "Hourly rates on the page",
+  "address": "Wind Point area, Wisconsin",
+  "url": "https://www.windborneflight.com/private-pilot-license-cost",
+  "sources": [
+    "https://www.windborneflight.com/private-pilot-license-cost"
+  ],
+  "summary": "Wisconsin flight school with two Piper Archers and a pricing list that includes fuel and sales tax.",
+  "differentiator": "States its Archer rates with fuel and Wisconsin sales tax included and bases its $17,000 to $18,000 private pilot estimate on 65 hours, so the figure is closer to a final bill than many pre-tax rates.",
+  "pricing": "Piper Archer at $211 or $232.10 an hour including fuel and tax, instructor $80 an hour.",
+  "rateBasis": "wet",
+  "aircraft": [
+    {
+      "label": "Piper Archer N1242H",
+      "perHour": 211,
+      "note": "Includes fuel and Wisconsin sales tax."
+    },
+    {
+      "label": "Piper Archer N81493",
+      "perHour": 232.1,
+      "note": "Includes fuel and Wisconsin sales tax."
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Flight instructor",
+      "perHour": 80
+    }
+  ],
+  "trainer": {
+    "label": "Piper Archer N1242H",
+    "perHour": 211
+  },
+  "flightInstruction": {
+    "perHour": 80
+  },
+  "estimate": {
+    "amount": 17000,
+    "hoursBasis": "65 hours at its standard airplane and instructor rates, training cost only",
+    "note": "The page gives a range of $17,000 to $18,000."
+  },
+  "feesNamed": [
+    "Discovery flight $200 weekdays, $250 weekends",
+    "Student-account payments in blocks of $1,000 or more earn a 5% credit"
+  ],
+  "bestFor": "Students in southeastern Wisconsin who want tax-inclusive rates.",
+  "skipIf": "You are comparing against rates that exclude tax; adjust for that first.",
+  "watchOut": [
+    "Rates include tax, so they are not directly comparable with schools that quote before tax.",
+    "Estimates cover training cost only, not exams, books or the medical."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Roadrunner Flight School",
+  "category": "Hourly rates on the page",
+  "address": "Farmington, New Mexico (KFMN)",
+  "url": "https://www.roadrunnerflightschool.com/pricing",
+  "sources": [
+    "https://www.roadrunnerflightschool.com/pricing"
+  ],
+  "summary": "Flight school at Four Corners Regional Airport in New Mexico with a line-item private pilot estimate.",
+  "differentiator": "Itemizes its FAA-minimum private pilot cost line by line, including the checkride aircraft ($300 for 2 hours) and the test prep course ($279), so each dollar of its $11,248 can be checked.",
+  "pricing": "Cessna 172 at $150 an hour, Cessna 172RG at $180, instructor $65 an hour. Sales tax not included.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Cessna 172",
+      "perHour": 150
+    },
+    {
+      "label": "Cessna 172RG",
+      "perHour": 180
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Instructor",
+      "perHour": 65
+    }
+  ],
+  "trainer": {
+    "label": "Cessna 172",
+    "perHour": 150
+  },
+  "flightInstruction": {
+    "perHour": 65
+  },
+  "estimate": {
+    "amount": 11248,
+    "hoursBasis": "FAA minimums: 30 hours with instructor, 10 hours solo, 20 hours of pre and post flight instruction, and 2 hours of aircraft for the checkride, in a Cessna 172 at $150 an hour",
+    "note": "Sales tax not included. The page says costs rise with extra flights, lessons or exam retakes."
+  },
+  "feesNamed": [
+    "Renter's insurance $185 for one year",
+    "Written exam $175",
+    "Practical exam fee $500",
+    "Aviation medical $179",
+    "Headset $130"
+  ],
+  "bestFor": "Students in the Four Corners area who want a minimum-hours budget they can check line by line.",
+  "skipIf": "You need an estimate at more than the FAA minimum number of hours.",
+  "watchOut": [
+    "The estimate assumes the FAA minimum hours; the page says costs rise with extra flights, lessons or retakes.",
+    "Sales tax is not included.",
+    "The page does not say whether the hourly rate includes fuel."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "California Flight School",
+  "category": "Program prices, ranges and partial rates",
+  "address": "California (city not shown on the page we read)",
+  "url": "https://www.californiaflightschool.com/flight-school-cost",
+  "sources": [
+    "https://www.californiaflightschool.com/flight-school-cost"
+  ],
+  "summary": "California flight school that quotes bundled prices rather than hourly rates.",
+  "differentiator": "Quotes bundles (a $13,000 to $15,000 package for 50 aircraft hours) instead of hourly rates, and names the checkride ($1,000) and test ($175 each) fees.",
+  "pricing": "Private pilot $9,000 for 40 hours, up to $13,000 to $15,000 for an accelerated pay-as-you-go course.",
+  "rateBasis": "not-stated",
+  "estimate": {
+    "amount": 9000,
+    "hoursBasis": "40 hours; the page shows $13,000 to $15,000 for an accelerated, pay-as-you-go course",
+    "note": "Bundled prices, not itemized hourly rates."
+  },
+  "feesNamed": [
+    "FAA tests $175 each",
+    "Final flight test $1,000",
+    "Books and equipment $299 to $450",
+    "Simulator $69 an hour",
+    "Instrument rating $4,350 for 30 hours"
+  ],
+  "bestFor": "Students who want a bundle price for a set number of hours.",
+  "skipIf": "You want hourly rates to compare.",
+  "watchOut": [
+    "Bundled prices only; no itemized aircraft or instructor rates.",
+    "The page shows no date.",
+    "The page does not name the airport."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

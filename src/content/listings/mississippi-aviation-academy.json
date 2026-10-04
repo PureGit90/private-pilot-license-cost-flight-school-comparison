@@ -1,0 +1,47 @@
+{
+  "name": "Mississippi Aviation Academy",
+  "category": "Hourly rates on the page",
+  "address": "Mississippi (city not shown on the rate page)",
+  "url": "https://www.mississippiaviationacademy.com/aircraft-rental-rates",
+  "sources": [
+    "https://www.mississippiaviationacademy.com/aircraft-rental-rates"
+  ],
+  "summary": "Mississippi flight school that publishes aircraft rental rates only.",
+  "differentiator": "States plainly that its rates cover the aircraft only and that instructor fees, fuel and maintenance are extra, so its $190 Cessna 172 rate excludes fuel.",
+  "pricing": "Cessna 150 at $150 an hour, Cessna 172 at $190, aircraft only.",
+  "rateBasis": "dry",
+  "aircraft": [
+    {
+      "label": "Cessna 150",
+      "perHour": 150
+    },
+    {
+      "label": "Cessna 172",
+      "perHour": 190
+    },
+    {
+      "label": "The Champ",
+      "perHour": 190
+    }
+  ],
+  "trainer": {
+    "label": "Cessna 172",
+    "perHour": 190
+  },
+  "feesNamed": [
+    "10-hour prepaid blocks come with one free hour",
+    "10% discount for military and first responders",
+    "Rates may change with fuel prices"
+  ],
+  "bestFor": "Pilots or students renting aircraft who pay for fuel and instruction separately.",
+  "skipIf": "You want an instructor rate or a training total from the page.",
+  "watchOut": [
+    "No instructor rate on the page.",
+    "The page says fuel, instructor fees and maintenance are extra.",
+    "The page names no city."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

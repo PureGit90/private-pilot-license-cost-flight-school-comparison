@@ -1,0 +1,49 @@
+{
+  "name": "Parrish Aviation",
+  "category": "Program prices, ranges and partial rates",
+  "address": "North Texas",
+  "url": "https://www.parrishaviation.com/how-much-does-it-cost-to-become-a-pilot/",
+  "sources": [
+    "https://www.parrishaviation.com/how-much-does-it-cost-to-become-a-pilot/"
+  ],
+  "pageDate": "2025 (stated in the heading)",
+  "summary": "North Texas flight school that gives hourly ranges by aircraft class.",
+  "differentiator": "Names its own aircraft classes (Cessna 152-class, Sling NGT glass-cockpit, twins) with an hourly range for each, but gives ranges instead of rates and asks for a personalized estimate.",
+  "pricing": "Older single-engine aircraft $100 to $130 an hour, Sling NGT $160 to $185, CFI $60 to $90.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Cessna 152-class single-engine aircraft",
+      "perHour": 100,
+      "perHourHigh": 130
+    },
+    {
+      "label": "Glass-cockpit aircraft such as its Sling NGT",
+      "perHour": 160,
+      "perHourHigh": 185
+    },
+    {
+      "label": "Twin-engine aircraft",
+      "perHour": 250,
+      "perHourHigh": 350
+    }
+  ],
+  "instruction": [
+    {
+      "label": "CFI rates, described as typical in North Texas",
+      "perHour": 60,
+      "perHourHigh": 90
+    }
+  ],
+  "bestFor": "Students who want a rough hourly range by aircraft class in North Texas.",
+  "skipIf": "You want a posted rate for each aircraft.",
+  "watchOut": [
+    "Ranges, not a rate sheet.",
+    "The CFI range is described as typical for North Texas, not as the school's own rate.",
+    "The heading says \"2025 rates\"."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

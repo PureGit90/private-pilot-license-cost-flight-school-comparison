@@ -1,0 +1,89 @@
+{
+  "name": "Pinnacle Aviation",
+  "category": "Hourly rates on the page",
+  "address": "Palomar Airport, San Diego area, California",
+  "url": "https://letsflysandiego.com/pinnacle-aviation.htm",
+  "sources": [
+    "https://letsflysandiego.com/pinnacle-aviation.htm"
+  ],
+  "summary": "San Diego area flight school that lists a standard rate and a discount rate for each aircraft.",
+  "differentiator": "Publishes two prices for every aircraft, a standard rate and a discount rate $10 to $15 an hour lower, and the discount depends on keeping a card on file and a $100 minimum balance.",
+  "pricing": "Cessna 172R at $215 an hour standard ($200 discount), primary instruction $85 an hour.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Cessna 152 G355",
+      "perHour": 165,
+      "note": "Discount rate $150"
+    },
+    {
+      "label": "Cessna 172R G650",
+      "perHour": 215,
+      "note": "Discount rate $200"
+    },
+    {
+      "label": "Cessna 172SP G650 (three aircraft)",
+      "perHour": 215,
+      "perHourHigh": 225,
+      "note": "Discount rates $205 to $210"
+    },
+    {
+      "label": "Cessna 172S G1000",
+      "perHour": 225,
+      "note": "Discount rate $210"
+    },
+    {
+      "label": "Cessna 172S G650",
+      "perHour": 220,
+      "note": "Discount rate $205"
+    },
+    {
+      "label": "Piper Seminole",
+      "perHour": 405,
+      "note": "Discount rate $380"
+    },
+    {
+      "label": "Frasca Mentor G-1000 simulator",
+      "perHour": 75
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Primary instruction",
+      "perHour": 85
+    },
+    {
+      "label": "Instrument and commercial, single engine",
+      "perHour": 85
+    },
+    {
+      "label": "Multi-engine instruction",
+      "perHour": 90
+    },
+    {
+      "label": "CFI instruction",
+      "perHour": 90
+    }
+  ],
+  "trainer": {
+    "label": "Cessna 172R G650",
+    "perHour": 215
+  },
+  "flightInstruction": {
+    "perHour": 85
+  },
+  "feesNamed": [
+    "Discount rate requires a credit card on file and at least $100 on account at all times, or prepaying the flight plus a $100 deposit"
+  ],
+  "bestFor": "Students who will keep a card and a balance on file to get the lower rate.",
+  "skipIf": "You want one price with no conditions.",
+  "watchOut": [
+    "The Cessna 172SP row shows several figures ($215/215/225) for different aircraft without naming which is which.",
+    "The page does not say whether rates include fuel.",
+    "It shows no date."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Accelerated Flight School",
+  "category": "Hourly rates on the page",
+  "address": "Van Nuys, California",
+  "url": "https://acceleratedflightschool.net/instrument-rating-van-nuys",
+  "sources": [
+    "https://acceleratedflightschool.net/instrument-rating-van-nuys"
+  ],
+  "summary": "Van Nuys school; we read its instrument rating page, which states wet aircraft and instruction rates.",
+  "differentiator": "States a combined dual rate of $165 an hour from, built from a $130 wet aircraft rate and a $35 instrument instructor rate that is far below the $50 to $105 other schools here publish.",
+  "pricing": "Aircraft wet from $130 an hour, instrument instruction $35 an hour, combined dual from $165.",
+  "rateBasis": "wet",
+  "aircraft": [
+    {
+      "label": "Aircraft, from (page range $130 to $175)",
+      "perHour": 130,
+      "perHourHigh": 175
+    }
+  ],
+  "instruction": [
+    {
+      "label": "CFII instruction",
+      "perHour": 35,
+      "note": "Published on its instrument rating page."
+    }
+  ],
+  "dualHourStated": {
+    "perHour": 165,
+    "note": "The page states \"Combined dual rate from $165 an hour.\""
+  },
+  "feesNamed": [
+    "Discovery flight $199.99"
+  ],
+  "bestFor": "Pilots working toward an instrument rating in the Los Angeles area.",
+  "skipIf": "You are looking for private pilot pricing; we read its instrument rating page only.",
+  "watchOut": [
+    "We read the instrument rating page only, not a private pilot page.",
+    "The $35 instruction rate is much lower than others here and the page does not say what it covers.",
+    "Rates are shown as \"from\" prices."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

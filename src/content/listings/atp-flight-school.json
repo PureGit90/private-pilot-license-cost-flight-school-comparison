@@ -1,0 +1,29 @@
+{
+  "name": "ATP Flight School",
+  "category": "Program prices, ranges and partial rates",
+  "url": "https://atpflightschool.com/become-a-pilot/flight-training/pilot-training-cost.html",
+  "sources": [
+    "https://atpflightschool.com/become-a-pilot/flight-training/pilot-training-cost.html"
+  ],
+  "pageDate": "2026-02-10",
+  "summary": "National flight school that sells fixed-price career programs instead of hourly rates.",
+  "differentiator": "Sells one fixed program price rather than an hourly rate: $123,995 from zero experience or $90,995 with a private certificate, and lists test fees, apps and gear as not included.",
+  "pricing": "Program totals only: $123,995 from no experience, $90,995 with a private pilot certificate.",
+  "rateBasis": "not-stated",
+  "feesNamed": [
+    "Not included: FAA examiner and knowledge test fees $10,500 to $12,000",
+    "Not included: iPad apps $200",
+    "Not included: pilot gear $2,005"
+  ],
+  "bestFor": "Career-track students comparing a fixed airline-pathway price.",
+  "skipIf": "You want a private pilot certificate only; the page does not publish one.",
+  "watchOut": [
+    "No hourly rates and no private pilot price on the page.",
+    "The page is a sales page with financing links and lead forms.",
+    "Examiner and test fees are listed as not included."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

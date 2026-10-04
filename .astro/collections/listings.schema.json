@@ -1,0 +1,239 @@
+{
+  "$ref": "#/definitions/listings",
+  "definitions": {
+    "listings": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "directoryType": {
+          "type": "string",
+          "enum": [
+            "local-business"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "differentiator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "affiliateUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "pricing": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pricingConfidence": {
+          "type": "string",
+          "enum": [
+            "vendor",
+            "third-party",
+            "quote"
+          ],
+          "default": "vendor"
+        },
+        "trainingModel": {
+          "type": "string",
+          "enum": [
+            "part-141",
+            "part-61",
+            "not-stated"
+          ],
+          "default": "not-stated"
+        },
+        "rateBasis": {
+          "type": "string",
+          "enum": [
+            "wet",
+            "dry",
+            "not-stated"
+          ]
+        },
+        "aircraft": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "perHour": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "perHourHigh": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "perHour"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "instruction": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/listings/properties/aircraft/items"
+          },
+          "default": []
+        },
+        "trainer": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "perHour": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": [
+            "label",
+            "perHour"
+          ],
+          "additionalProperties": false
+        },
+        "flightInstruction": {
+          "type": "object",
+          "properties": {
+            "perHour": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "perHourHigh": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": [
+            "perHour"
+          ],
+          "additionalProperties": false
+        },
+        "dualHourStated": {
+          "type": "object",
+          "properties": {
+            "perHour": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "perHour",
+            "note"
+          ],
+          "additionalProperties": false
+        },
+        "estimate": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "hoursBasis": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "hoursBasis"
+          ],
+          "additionalProperties": false
+        },
+        "feesNamed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "pageDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bestFor": {
+          "type": "string"
+        },
+        "skipIf": {
+          "type": "string"
+        },
+        "watchOut": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "lastChecked": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "minItems": 1
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "directoryType",
+        "summary",
+        "differentiator",
+        "url",
+        "category",
+        "rateBasis",
+        "lastChecked",
+        "sources"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

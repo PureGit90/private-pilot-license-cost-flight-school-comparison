@@ -1,0 +1,70 @@
+{
+  "name": "Tailwinds Academy",
+  "category": "Hourly rates on the page",
+  "address": "Philadelphia, Pennsylvania",
+  "url": "https://tailwindsacademy.org/costs/",
+  "sources": [
+    "https://tailwindsacademy.org/costs/"
+  ],
+  "summary": "Philadelphia flight school that says it is a 501(c)(3) nonprofit and lists wet rates for four aircraft.",
+  "differentiator": "Bases its $23,000 to $28,000 private pilot estimate on about 80 flight hours and 90 instruction hours, more than the 40 to 65 hours most other estimates here assume, and lists the extras separately.",
+  "pricing": "Cessna 172N at $225 to $235 an hour wet, Cessna 150L at $165, instructor $90 an hour.",
+  "rateBasis": "wet",
+  "aircraft": [
+    {
+      "label": "Cessna 172N N733PN",
+      "perHour": 235
+    },
+    {
+      "label": "Cessna 172N N20105",
+      "perHour": 235
+    },
+    {
+      "label": "Cessna 172N N862TW",
+      "perHour": 225
+    },
+    {
+      "label": "Cessna 150L N861TW",
+      "perHour": 165
+    },
+    {
+      "label": "Foundation 1000 simulator",
+      "perHour": 86
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Instructor",
+      "perHour": 90
+    }
+  ],
+  "trainer": {
+    "label": "Cessna 172N N862TW",
+    "perHour": 225
+  },
+  "flightInstruction": {
+    "perHour": 90
+  },
+  "estimate": {
+    "amount": 23000,
+    "hoursBasis": "about 80 flight hours and 90 instruction hours",
+    "note": "The page gives a range of $23,000 to $28,000."
+  },
+  "feesNamed": [
+    "Knowledge test $175",
+    "Practical test about $700",
+    "Medical exam $150",
+    "Renter's insurance about $300",
+    "Books and supplies about $500"
+  ],
+  "bestFor": "Students who want a nonprofit school and a budget that lists the extras.",
+  "skipIf": "You are comparing the lowest hourly rate; its Cessna 172N rates are among the higher ones published here.",
+  "watchOut": [
+    "The page shows no date.",
+    "Its $225 to $235 Cessna 172N rates are higher than several others in this set."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

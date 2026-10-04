@@ -1,0 +1,79 @@
+{
+  "name": "Texas State Aviation",
+  "category": "Hourly rates on the page",
+  "address": "San Marcos, Texas",
+  "url": "https://tsaviation.com/flighttrainingcourses/pricelist/",
+  "sources": [
+    "https://tsaviation.com/flighttrainingcourses/pricelist/"
+  ],
+  "summary": "San Marcos flight school with a price list for six trainers and separate instruction rates.",
+  "differentiator": "Its Diamond DA20 at $130 plus single-engine instruction at $70 makes a $200 dual hour, among the lowest published here, though the page does not say whether fuel is included.",
+  "pricing": "Diamond DA20 at $130 an hour, Cessna 172 from $145, instruction $70 an hour, ground $55.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Diamond DA20-C1",
+      "perHour": 130
+    },
+    {
+      "label": "Cessna 172L",
+      "perHour": 145
+    },
+    {
+      "label": "Cessna 172P",
+      "perHour": 150
+    },
+    {
+      "label": "Cessna 172R-180",
+      "perHour": 157
+    },
+    {
+      "label": "Bellanca Citabria 7GCAA",
+      "perHour": 160
+    },
+    {
+      "label": "Micco SP-26A, dual only",
+      "perHour": 250
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Single engine",
+      "perHour": 70
+    },
+    {
+      "label": "Multi-engine",
+      "perHour": 100
+    },
+    {
+      "label": "Privately owned aircraft",
+      "perHour": 70
+    },
+    {
+      "label": "Ground instruction",
+      "perHour": 55
+    }
+  ],
+  "trainer": {
+    "label": "Cessna 172L",
+    "perHour": 145
+  },
+  "flightInstruction": {
+    "perHour": 70
+  },
+  "feesNamed": [
+    "Gleim and BATD flight simulator listed as free",
+    "Discounts: 5% for military or students, 5% for 10 or more hours, 3% for cash or check"
+  ],
+  "bestFor": "Students in the San Marcos area comparing a low published dual hour.",
+  "skipIf": "You need to know whether fuel is included.",
+  "watchOut": [
+    "The page does not say whether rates include fuel.",
+    "It shows no date.",
+    "Discounts apply only to certain students or payment methods."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

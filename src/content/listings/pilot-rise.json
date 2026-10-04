@@ -1,0 +1,74 @@
+{
+  "name": "Pilot Rise",
+  "category": "Hourly rates on the page",
+  "address": "Dallas and Fort Worth, Texas",
+  "url": "https://pilotrise.com/detailed-prices/",
+  "sources": [
+    "https://pilotrise.com/detailed-prices/"
+  ],
+  "pageDate": "2026-09-19",
+  "summary": "Dallas and Fort Worth flight school that lists every aircraft by tail number on a dated rate sheet.",
+  "differentiator": "Its rate sheet, updated September 19, 2026, names every charge beyond the hourly rate: a refundable deposit, a fuel surcharge, a late-cancel fee and a $10 a month fee for inactive accounts.",
+  "pricing": "Cessna 172 at $165 to $180 an hour wet, Cessna 150 at $130, instructor $65 to $70 an hour.",
+  "rateBasis": "wet",
+  "aircraft": [
+    {
+      "label": "Cessna 172 N738TZ (Garmin 500, air conditioning)",
+      "perHour": 180
+    },
+    {
+      "label": "Cessna 172, five other tail numbers",
+      "perHour": 165,
+      "note": "N172JA, N6087R, N46198, N89878, N912AT"
+    },
+    {
+      "label": "Alpha Trainer N489LP",
+      "perHour": 165
+    },
+    {
+      "label": "Cessna 150, three tail numbers",
+      "perHour": 130,
+      "note": "N714FW, N714LZ, N447DK"
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Standard",
+      "perHour": 70
+    },
+    {
+      "label": "Early bird or night owl",
+      "perHour": 65
+    },
+    {
+      "label": "CFI training",
+      "perHour": 90
+    }
+  ],
+  "trainer": {
+    "label": "Cessna 172",
+    "perHour": 165
+  },
+  "flightInstruction": {
+    "perHour": 70
+  },
+  "feesNamed": [
+    "$1,500 refundable security deposit (aircraft rates rise $10 an hour if you decline it)",
+    "Temporary fuel surcharge of $0.90 a gallon from May 11, 2026, while fuel exceeds $5.75 a gallon",
+    "Late cancel under 36 hours: $200",
+    "Discovery flight $150",
+    "Headset rental $10 a flight",
+    "No block rates; pay as you go on Hobbs time"
+  ],
+  "bestFor": "Students who want every charge written down before they sign up.",
+  "skipIf": "You prefer prepaid block rates; it does not offer them.",
+  "watchOut": [
+    "A fuel surcharge applies while fuel is above $5.75 a gallon (effective May 11, 2026), so the wet rate can rise.",
+    "The $1,500 deposit is refundable minus outstanding charges.",
+    "The page lists no private pilot total."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}

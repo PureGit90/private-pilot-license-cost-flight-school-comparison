@@ -1,0 +1,56 @@
+{
+  "name": "Vegas Aviation",
+  "category": "Hourly rates on the page",
+  "address": "Las Vegas, Nevada",
+  "url": "https://vegasaviation.com/resources/pricing/",
+  "sources": [
+    "https://vegasaviation.com/resources/pricing/"
+  ],
+  "summary": "Las Vegas flight school with a fleet of eight Cessna 172s and an itemized private pilot estimate.",
+  "differentiator": "States the hours behind its estimate: its $17,285 private pilot total assumes 62 flight hours and 2 simulator hours, and the dual hour works out to $235 ($175 aircraft plus $60 instruction).",
+  "pricing": "Cessna 172 from $175 an hour, instruction from $60 an hour, Duchess from $425.",
+  "rateBasis": "not-stated",
+  "aircraft": [
+    {
+      "label": "Cessna 172 (fleet of 8), starting at",
+      "perHour": 175
+    },
+    {
+      "label": "Beechcraft Duchess (2), starting at",
+      "perHour": 425
+    }
+  ],
+  "instruction": [
+    {
+      "label": "Flight instruction, starting at",
+      "perHour": 60,
+      "note": "Billed in addition to the aircraft rate."
+    }
+  ],
+  "trainer": {
+    "label": "Cessna 172",
+    "perHour": 175
+  },
+  "flightInstruction": {
+    "perHour": 60
+  },
+  "estimate": {
+    "amount": 17285,
+    "hoursBasis": "62 flight hours and 2 simulator hours: 50 hours dual at $235 an hour, 10 hours solo at $175, 20 hours of ground instruction at $60",
+    "note": "Includes a $765 onboarding kit with the Cessna online course, a 2-hour checkride aircraft rental ($350) and the $1,200 examiner fee."
+  },
+  "feesNamed": [
+    "Examiner fee $1,200 (in its estimate)",
+    "Onboarding kit $765 (in its estimate)"
+  ],
+  "bestFor": "Students who want a full private pilot estimate with the checkride included.",
+  "skipIf": "You want a firm hourly rate rather than \"starting at\" prices.",
+  "watchOut": [
+    "Rates are \"starting at\" prices, so a given aircraft may cost more.",
+    "The page does not say whether the aircraft rate includes fuel."
+  ],
+  "directoryType": "local-business",
+  "pricingConfidence": "vendor",
+  "trainingModel": "not-stated",
+  "lastChecked": "2026-10-04"
+}
