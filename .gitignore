@@ -7,3 +7,4 @@ dist-audit/
 .DS_Store
 .playwright-mcp/
 .firecrawl/
+.astro/
