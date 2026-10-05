@@ -1,0 +1,43 @@
+{
+  "publisher": "FLYING Magazine",
+  "title": "Best Online Ground Schools",
+  "url": "https://www.flyingmag.com/best-online-ground-school/",
+  "dateLabel": "Thursday, February 5, 2026 (shown on the article)",
+  "rows": [
+    {
+      "course": "pilot-institute",
+      "priceLow": 279,
+      "access": "Lifetime",
+      "endorsement": "included"
+    },
+    {
+      "course": "king-schools",
+      "priceLow": 299,
+      "access": "Lifetime",
+      "endorsement": "included"
+    },
+    {
+      "course": "gold-seal",
+      "priceLow": 229,
+      "priceHigh": 299,
+      "access": "1 year or lifetime",
+      "endorsement": "included"
+    },
+    {
+      "course": "asa",
+      "priceLow": 179.95,
+      "access": "24 months",
+      "endorsement": "included"
+    },
+    {
+      "course": "sportys",
+      "priceLow": 299,
+      "access": "Lifetime",
+      "endorsement": "included"
+    }
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://www.flyingmag.com/best-online-ground-school/"
+  ]
+}

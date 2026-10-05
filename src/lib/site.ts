@@ -19,6 +19,7 @@ export const DATA_DATE_LABEL = 'October 4, 2026';
 
 export const NAV: { href: string; label: string }[] = [
   { href: '/private-pilot-license-cost/', label: 'Cost' },
+  { href: '/ground-school-cost/', label: 'Ground school' },
   { href: '/all/', label: 'All schools' },
   { href: '/how-we-compare/', label: 'Method' },
 ];

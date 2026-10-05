@@ -1,0 +1,25 @@
+{
+  "name": "Private Pilot Ground School",
+  "provider": "FLY8MA",
+  "kind": "full-course",
+  "summary": "Video course of 40 to 50 hours that includes a written test bootcamp.",
+  "url": "https://fly8ma.com/subscription-options/",
+  "price": 349,
+  "priceLabel": "$349 (the page shows $449 crossed out)",
+  "accessTerm": "Lifetime access when bought as a single course",
+  "endorsement": "included",
+  "endorsementNote": "The Written Prep BootCamp included with the purchase says it lets you earn your written test endorsement.",
+  "guarantee": "Says it gives a full refund if you complete the courses for a certificate and fail the written test or checkride.",
+  "includes": [
+    "125 HD videos, 40 to 50 hours",
+    "Private Pilot Written Prep BootCamp with over 800 FAA test questions"
+  ],
+  "watchOut": [
+    "The page does not say whether the $349 price is a limited promotion; $449 is shown crossed out.",
+    "The page also sells monthly memberships ($79 and $127 a month) and a $1,999 lifetime plan; we did not compare them."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://fly8ma.com/subscription-options/"
+  ]
+}

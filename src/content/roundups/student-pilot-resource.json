@@ -1,0 +1,42 @@
+{
+  "publisher": "Student Pilot Resource",
+  "title": "Best Ground School for Private Pilot 2026",
+  "url": "https://studentpilotresource.com/ground-school-comparison",
+  "dateLabel": "Titled 2026; no date shown on the page",
+  "rows": [
+    {
+      "course": "pilot-institute",
+      "priceLow": 197,
+      "access": "Lifetime",
+      "endorsement": "not-included"
+    },
+    {
+      "course": "sportys",
+      "priceLow": 299,
+      "access": "3 years",
+      "endorsement": "included"
+    },
+    {
+      "course": "king-schools",
+      "priceLow": 249,
+      "access": "Lifetime",
+      "endorsement": "included"
+    },
+    {
+      "course": "gleim",
+      "priceLow": 79,
+      "priceHigh": 149,
+      "access": "1 to 2 years"
+    },
+    {
+      "course": "gold-seal",
+      "priceLow": 179,
+      "access": "Lifetime",
+      "endorsement": "included"
+    }
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://studentpilotresource.com/ground-school-comparison"
+  ]
+}

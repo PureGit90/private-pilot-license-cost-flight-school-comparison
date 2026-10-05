@@ -1,0 +1,24 @@
+{
+  "name": "Online Ground School: Private Pilot",
+  "provider": "Gleim",
+  "kind": "full-course",
+  "summary": "Self-directed course of 11 modules with a 12 month access window.",
+  "url": "https://aviation.gleim.com/shop/ogspp/",
+  "price": 159.95,
+  "priceLabel": "$159.95",
+  "accessTerm": "Access expires 12 months from the date of purchase",
+  "endorsement": "included",
+  "endorsementNote": "Says completing the course gives you the sign-off endorsement to test, with no instructor needed.",
+  "guarantee": "Says it guarantees you will pass your FAA knowledge test if taken within 30 days after graduation, and refunds the purchase price if you do not pass on the first attempt.",
+  "includes": [
+    "11 course modules with video segments and study guides"
+  ],
+  "watchOut": [
+    "The page also lists a Part 141 version at $179.95 and a test prep set at $199.95; we did not read what they add.",
+    "Access ends after 12 months, shorter than the lifetime access several others state."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://aviation.gleim.com/shop/ogspp/"
+  ]
+}

@@ -49,4 +49,51 @@ const listings = defineCollection({
   }),
 });
 
-export const collections = { listings };
+// Online ground school and test prep providers: what each one's own page states about price, access, the
+// FAA written test endorsement and its pass guarantee. price is null for subscriptions with no single price.
+const courses = defineCollection({
+  type: 'data',
+  schema: z.object({
+    name: z.string().min(1),
+    provider: z.string().min(1),
+    kind: z.enum(['full-course', 'bundle', 'test-prep']),
+    summary: z.string().min(1),
+    url: z.string().url(),
+    // Tracked referral link, set once a program approves us. The plain url stays as the fallback.
+    affiliateUrl: z.string().url().optional(),
+    price: z.number().positive().nullable(),
+    priceLabel: z.string().min(1),
+    accessTerm: z.string().min(1),
+    endorsement: z.enum(['included', 'not-stated']),
+    endorsementNote: z.string().optional(),
+    guarantee: z.string().min(1),
+    includes: z.array(z.string()).default([]),
+    watchOut: z.array(z.string()).default([]),
+    pageDate: z.string().nullable().optional(),
+    lastChecked: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    sources: z.array(z.string().url()).min(1),
+  }),
+});
+
+// Third-party comparison articles and what they list for each provider, so the page can show where they disagree
+// with the providers' own pages. Dates are as the article shows them.
+const roundups = defineCollection({
+  type: 'data',
+  schema: z.object({
+    publisher: z.string().min(1),
+    title: z.string().min(1),
+    url: z.string().url(),
+    dateLabel: z.string().min(1),
+    rows: z.array(z.object({
+      course: z.string().min(1),
+      priceLow: z.number().positive(),
+      priceHigh: z.number().positive().optional(),
+      access: z.string().optional(),
+      endorsement: z.enum(['included', 'not-included', 'not-stated']).default('not-stated'),
+    })),
+    lastChecked: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    sources: z.array(z.string().url()).min(1),
+  }),
+});
+
+export const collections = { listings, courses, roundups };

@@ -1,0 +1,26 @@
+{
+  "name": "Deluxe Learn To Fly Course Kit",
+  "provider": "Sporty's",
+  "kind": "bundle",
+  "summary": "The Learn to Fly Course plus physical books and gear.",
+  "url": "https://www.sportys.com/learn-to-fly-course-private-pilot-test-prep-online-app-and-tv.html",
+  "price": 499,
+  "priceLabel": "$499",
+  "accessTerm": "Same course as above; the page does not state how long access lasts",
+  "endorsement": "included",
+  "guarantee": "See the Learn to Fly Course; the kit page does not restate it.",
+  "includes": [
+    "Sporty's Learn to Fly Course",
+    "Electronic E6B flight computer",
+    "Airman Knowledge Testing Supplement for Private Pilot",
+    "Airplane Flying Handbook, Pilot's Handbook of Aeronautical Knowledge, FAR/AIM",
+    "Maneuvers guide, logbook, fuel tester, crosswind bag, sectional plotter, IFR training glasses"
+  ],
+  "watchOut": [
+    "Most of the extra $200 is physical items you may already own or be lent by a school."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://www.sportys.com/learn-to-fly-course-private-pilot-test-prep-online-app-and-tv.html"
+  ]
+}

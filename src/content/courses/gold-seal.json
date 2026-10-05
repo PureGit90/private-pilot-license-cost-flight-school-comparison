@@ -1,0 +1,26 @@
+{
+  "name": "Gold Seal Private Pilot Ground School",
+  "provider": "Gold Seal Online Ground School",
+  "kind": "full-course",
+  "summary": "A year of online training with CFI email and phone support, and a cheap renewal.",
+  "url": "https://groundschool.com/privatepilot",
+  "price": 229,
+  "priceLabel": "$229 for the first year, then $60 a year",
+  "accessTerm": "One year; additional annual enrollments are $60",
+  "endorsement": "included",
+  "endorsementNote": "Says a downloadable PDF endorsement signed and dated by an FAA flight instructor is issued on completion.",
+  "guarantee": "Says it reimburses the cost of the exam, up to $175, if you complete the program and do not pass the FAA knowledge test on the first try (taken within 7 days of the final exam), plus a 90 day full refund if you have not completed the course.",
+  "includes": [
+    "Unlimited randomized quizzes through a quizzing and review engine",
+    "Email and phone support from a CFI",
+    "Private Pilot syllabus, library and a signed Certificate of Completion"
+  ],
+  "watchOut": [
+    "Access is one year, not lifetime; comparison articles list this course as one year or lifetime, at $179 to $299.",
+    "The first-try guarantee needs the exam taken within 7 days of the final exam."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://groundschool.com/privatepilot"
+  ]
+}

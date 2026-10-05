@@ -1,0 +1,21 @@
+{
+  "publisher": "ThrustFlight",
+  "title": "11 Best Online Ground Schools",
+  "url": "https://www.thrustflight.com/best-online-ground-schools/",
+  "dateLabel": "Updated January 16, 2026 (shown on the article)",
+  "rows": [
+    {
+      "course": "pilot-institute",
+      "priceLow": 279,
+      "access": "Lifetime"
+    },
+    {
+      "course": "fly8ma",
+      "priceLow": 349
+    }
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://www.thrustflight.com/best-online-ground-schools/"
+  ]
+}

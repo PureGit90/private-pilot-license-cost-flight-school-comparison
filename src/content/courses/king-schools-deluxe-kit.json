@@ -1,0 +1,23 @@
+{
+  "name": "Private Pilot Deluxe Kit",
+  "provider": "King Schools",
+  "kind": "bundle",
+  "summary": "The Complete Private Pilot Course plus 14 additional pilot skills courses.",
+  "url": "https://kingschools.com/private-pilot-certificate",
+  "price": 599,
+  "priceLabel": "$599 (the page also shows $1,274 crossed out)",
+  "accessTerm": "Free lifetime course access and automatic updates, no subscriptions",
+  "endorsement": "not-stated",
+  "guarantee": "Says \"100% money-back guarantee\". The conditions are not stated on the page we read.",
+  "includes": [
+    "Everything in the Complete Private Pilot Course",
+    "14 extra courses, including Takeoffs and Landings Made Easy, Pilot Communications, Aviation Weather Wise and Taming Stalls and Spins"
+  ],
+  "watchOut": [
+    "The $1,274 figure is shown crossed out; the page does not say what it is based on or when the $599 price ends."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://kingschools.com/private-pilot-certificate"
+  ]
+}

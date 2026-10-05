@@ -1,0 +1,23 @@
+{
+  "name": "Private Pilot Ground School",
+  "provider": "FlightInsight",
+  "kind": "full-course",
+  "summary": "Video ground school taught by one flight instructor.",
+  "url": "https://www.flight-insight.com/",
+  "price": 249,
+  "priceLabel": "$249",
+  "accessTerm": "Not stated on the page we read",
+  "endorsement": "not-stated",
+  "endorsementNote": "The page we read does not mention an endorsement.",
+  "guarantee": "Not stated on the page we read.",
+  "includes": [
+    "The page says the course helps you pass your written tests; it does not list what is included"
+  ],
+  "watchOut": [
+    "We read the home page; the course page may state access, endorsement and guarantee terms that we did not see."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://www.flight-insight.com/"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Private Pilot written exam prep",
+  "provider": "Aviation Test Prep",
+  "kind": "test-prep",
+  "summary": "A question bank subscription for the FAA written exam, not a video ground school.",
+  "url": "https://aviationtestprep.com/",
+  "price": null,
+  "priceLabel": "$19.99 a month, $49.99 every 3 months, or $179.99 a year",
+  "accessTerm": "Subscription; cancel any time; one subscription covers one exam at a time",
+  "endorsement": "not-stated",
+  "endorsementNote": "The page lists a question bank and study tools, not a ground school endorsement.",
+  "guarantee": "Says it has a pass guarantee on the quarterly and annual plans.",
+  "includes": [
+    "Full question bank for the exam",
+    "AI explanations with FAA figures",
+    "Spaced repetition review and an exam readiness score"
+  ],
+  "watchOut": [
+    "It prepares you for the written test only. A student who needs an endorsement from a ground school course needs a course.",
+    "The monthly plan has no pass guarantee, per the page."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://aviationtestprep.com/"
+  ]
+}

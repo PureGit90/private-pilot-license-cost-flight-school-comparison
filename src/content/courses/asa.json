@@ -1,0 +1,23 @@
+{
+  "name": "Private Pilot Online Ground School",
+  "provider": "ASA (Aviation Supplies and Academics)",
+  "kind": "full-course",
+  "summary": "Online course with Prepware test prep included for 24 months.",
+  "url": "https://asa2fly.com/private-pilot-online-ground-school-dd/",
+  "price": 179.95,
+  "priceLabel": "$179.95",
+  "accessTerm": "24 months from course registration",
+  "endorsement": "included",
+  "endorsementNote": "Says you receive an endorsement letter and graduation certificate on completion.",
+  "guarantee": "Not stated on the page we read.",
+  "includes": [
+    "A subscription to ASA Prepware Online with quizzes and sample FAA questions"
+  ],
+  "watchOut": [
+    "No pass guarantee or refund terms appeared on the page we read."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://asa2fly.com/private-pilot-online-ground-school-dd/"
+  ]
+}

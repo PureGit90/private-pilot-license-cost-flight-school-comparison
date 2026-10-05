@@ -1,0 +1,26 @@
+{
+  "name": "Private Pilot Made Easy Online Ground School",
+  "provider": "Pilot Institute",
+  "kind": "full-course",
+  "summary": "Video ground school sold as a one-time purchase with lifetime access.",
+  "url": "https://pilotinstitute.com/course/part-61-private-pilot/",
+  "price": 249,
+  "priceLabel": "$249, one time",
+  "accessTerm": "Lifetime access, no recurring fees",
+  "endorsement": "included",
+  "endorsementNote": "Says a free written endorsement is issued after 100% of the coursework and 80% or better on two timed practice exams.",
+  "guarantee": "Says it will send $175 and refund 100% of the course if you do not pass the FAA test on your first try, plus a 30 day satisfaction guarantee.",
+  "includes": [
+    "Over 800 practice questions and several practice exams",
+    "A free Airplane Maneuvers Mastery course, which the page values at $149 (the provider's own figure)"
+  ],
+  "watchOut": [
+    "The page does not say how soon after purchase the first-try guarantee must be claimed.",
+    "Third-party comparison articles list different prices for this course; see the disagreement table."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://pilotinstitute.com/course/part-61-private-pilot/",
+    "https://pilotinstitute.com/"
+  ]
+}

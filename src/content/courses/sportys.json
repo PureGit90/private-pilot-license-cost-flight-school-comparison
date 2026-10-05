@@ -1,0 +1,25 @@
+{
+  "name": "Learn to Fly Course, Private Pilot Ground School",
+  "provider": "Sporty's",
+  "kind": "full-course",
+  "summary": "Online ground school with test prep and an endorsement, and a pass guarantee that covers the checkride too.",
+  "url": "https://www.sportys.com/learn-to-fly-course-private-pilot-test-prep-online-app-and-tv.html",
+  "price": 299,
+  "priceLabel": "$299",
+  "accessTerm": "Free lifetime updates; the page does not state how long course access lasts",
+  "endorsement": "included",
+  "endorsementNote": "Says that on completion you receive an official endorsement to take your FAA written test.",
+  "guarantee": "Says \"We guarantee that you'll pass all three tests required to get your Private Pilot certificate (FAA knowledge test, checkride oral and checkride flight) or you're entitled to a full refund.\"",
+  "includes": [
+    "Interactive written test prep with 1,000+ questions",
+    "Custom study sessions with instructor explanations"
+  ],
+  "watchOut": [
+    "The guarantee covers three tests, not only the written test. Read its conditions before relying on it.",
+    "Access length is not stated on the page; one comparison article says 3 years, another says lifetime."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://www.sportys.com/learn-to-fly-course-private-pilot-test-prep-online-app-and-tv.html"
+  ]
+}

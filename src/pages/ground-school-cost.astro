@@ -1,0 +1,127 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { DATA_DATE_LABEL } from '../lib/site';
+import { priceStats, comparisons, endorsementGaps, fmtPrice, fmtRow } from '../lib/ground';
+
+const courses = (await getCollection('courses')).sort((a, b) => (a.data.price ?? 1e9) - (b.data.price ?? 1e9));
+const roundups = (await getCollection('roundups')).sort((a, b) => a.data.publisher.localeCompare(b.data.publisher));
+const schools = await getCollection('listings');
+const full = courses.filter((c) => c.data.kind === 'full-course');
+const stats = priceStats(courses);
+const cmp = comparisons(courses, roundups);
+const differing = cmp.filter((c) => c.differs);
+const gaps = endorsementGaps(courses, roundups);
+const withEndorsement = full.filter((c) => c.data.endorsement === 'included');
+const notStated = full.filter((c) => c.data.endorsement === 'not-stated');
+const cell = (course: (typeof courses)[number], rid: string) => {
+  const roundup = roundups.find((r) => r.id === rid)!;
+  const row = roundup.data.rows.find((r) => r.course === course.id);
+  if (!row) return null;
+  return { row, differs: course.data.price !== null && (row.priceHigh ? course.data.price < row.priceLow || course.data.price > row.priceHigh : course.data.price !== row.priceLow) };
+};
+const withRoundupRows = courses.filter((c) => c.data.price !== null && roundups.some((r) => r.data.rows.some((x) => x.course === c.id)));
+const feeSchools = schools.filter((l) => l.data.feesNamed.some((f) => /(knowledge|written|FAA) tests?.*\$175|written exam \$175|tests \$175/i.test(f)));
+const faq = [
+  {
+    q: 'How much does an online private pilot ground school cost?',
+    a: `On the providers' own pages, the ${stats.n} full courses we read run from ${fmtPrice(stats.min)} to ${fmtPrice(stats.max)}, with a median of ${fmtPrice(stats.median)}. Access differs a lot: from 12 months to lifetime. Bundles with books or extra courses cost more, and a test prep subscription costs less per month but is not a course. Read ${DATA_DATE_LABEL}.`,
+  },
+  {
+    q: 'Why do comparison articles list different prices for the same course?',
+    a: `Of the ${cmp.length} course prices listed in the ${roundups.length} comparison articles we read, ${differing.length} differ from the provider's own page as we read it. Reasons we cannot see from outside include sales, older prices and different packages. Each article carries its own date, or none. Check the provider's page at the moment you buy.`,
+  },
+  {
+    q: 'Does ground school include the endorsement to take the FAA written test?',
+    a: `${withEndorsement.length} of the ${full.length} full courses say on their own pages that they issue an endorsement or sign-off (${withEndorsement.map((c) => c.data.provider).join(', ')}). ${notStated.length} do not state it on the page we read (${notStated.map((c) => c.data.provider).join(', ')}). One article says Pilot Institute does not include one, while Pilot Institute's page says it does. Ask the provider before you buy if you need it.`,
+  },
+  {
+    q: 'What does the FAA written test itself cost?',
+    a: `The ground school price is separate from the test. ${feeSchools.length} of the flight schools we read name the FAA knowledge test at about $175 on their own pages (${feeSchools.map((l) => l.data.name).join(', ')}). Two ground schools mention the same amount in their guarantees: Pilot Institute says it sends $175 on top of a refund if you fail on the first try, and Gold Seal says it reimburses the exam up to $175, each with its own conditions.`,
+  },
+];
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Private pilot ground school cost: what providers publish', description: 'Prices, access terms and guarantees published by online private pilot ground school providers, compared with what comparison articles say.' },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
+const endorsementLabel = (c: (typeof courses)[number]) => (c.data.endorsement === 'included' ? 'States it issues one' : 'Not stated on the page we read');
+---
+<BaseLayout title="Private Pilot Ground School Cost: What Providers Publish" description={`${stats.n} online ground schools priced from ${fmtPrice(stats.min)} to ${fmtPrice(stats.max)} on their own pages, with access, endorsement and guarantee terms.`.slice(0, 155)} jsonLd={jsonLd}>
+  <div class="wrap prose wide">
+    <p class="crumbs"><a href="/">Home</a> / Ground school cost</p>
+    <h1>Private pilot ground school cost: what providers publish</h1>
+    <p class="lead">Ground school is the study part of the cost of a private pilot certificate. These are the prices and terms each provider's own page states, read on {DATA_DATE_LABEL}. They are not quotes, and the comparison articles that list them often disagree with the providers.</p>
+
+    <div class="panel">
+      <h2>What this page does and does not cover</h2>
+      <p>It covers online courses for the private pilot certificate and one test prep subscription, taken from the providers' own pages. It does not rank them, say which teaches best, or test any of them. Flight school rates are on the <a href="/private-pilot-license-cost/">cost page</a>.</p>
+    </div>
+
+    <h2>What each provider's page says</h2>
+    <div class="table-wrap">
+      <table class="stack rate-table">
+        <caption>Private pilot online courses and test prep, lowest price first</caption>
+        <thead><tr><th scope="col">Course</th><th scope="col">Price</th><th scope="col">Access</th><th scope="col">FAA written test endorsement</th><th scope="col">Guarantee, as the page words it</th></tr></thead>
+        <tbody>
+          {courses.map((c) => (
+            <tr>
+              <th scope="row"><a href={c.data.affiliateUrl ?? c.data.url} rel={c.data.affiliateUrl ? 'sponsored noopener' : 'noopener'} target="_blank">{c.data.provider}</a><br /><span class="small">{c.data.name}</span></th>
+              <td data-label="Price" class="num">{c.data.priceLabel}</td>
+              <td data-label="Access">{c.data.accessTerm}</td>
+              <td data-label="FAA written test endorsement"><span class={`tag ${c.data.endorsement === 'included' ? 'wet' : 'nostated'}`}>{endorsementLabel(c)}</span></td>
+              <td data-label="Guarantee, as the page words it">{c.data.guarantee}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Full courses run {fmtPrice(stats.min)} to {fmtPrice(stats.max)} (median {fmtPrice(stats.median)}, {stats.n} courses). Bundles add books, gear or extra courses. The test prep subscription is a question bank, not a course. "Not stated" means the page we read did not say; the provider may say it elsewhere.</p>
+
+    <h2>Where the comparison articles disagree</h2>
+    <p>{differing.length} of {cmp.length} prices in three comparison articles differ from the provider's own page. The articles carry different dates, and a gap may be a sale, an older price or a different package, but a reader comparing them would not know which number to trust.</p>
+    <div class="legend">
+      <span class="tag wet">Matches the provider page</span>
+      <span class="tag dry">Differs from the provider page</span>
+    </div>
+    <div class="table-wrap">
+      <table class="stack rate-table">
+        <caption>Price listed for the same course, by source</caption>
+        <thead><tr><th scope="col">Course</th><th scope="col">Provider's own page<br /><span class="small">read {DATA_DATE_LABEL}</span></th>{roundups.map((r) => <th scope="col"><a href={r.data.url} rel="noopener" target="_blank">{r.data.publisher}</a><br /><span class="small">{r.data.dateLabel}</span></th>)}</tr></thead>
+        <tbody>
+          {withRoundupRows.map((c) => (
+            <tr>
+              <th scope="row">{c.data.provider}<br /><span class="small">{c.data.name}</span></th>
+              <td data-label="Provider's own page" class="num">{fmtPrice(c.data.price as number)}</td>
+              {roundups.map((r) => {
+                const x = cell(c, r.id);
+                return <td data-label={r.data.publisher} class="num">{x ? <span class={`tag ${x.differs ? 'dry' : 'wet'}`}>{fmtRow(x.row)}</span> : 'Not listed'}</td>;
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="small">A listed range that contains the provider's own price counts as a match. Articles may price a different package than the course we read. Each article's address is in its column heading.</p>
+
+    <h2>Where they disagree on the endorsement</h2>
+    <ul>
+      {gaps.map((g) => (
+        <li><strong>{g.course.data.provider}:</strong> {g.kind === 'contradicts' ? `${g.roundup.data.publisher} says the course does not include an FAA endorsement; the provider's own page says it does.` : `${g.roundup.data.publisher} says the course includes an endorsement; the provider's own page does not mention one.`}</li>
+      ))}
+    </ul>
+
+    <h2>Common questions</h2>
+    <dl class="faq">
+      {faq.map((f) => (<><dt>{f.q}</dt><dd>{f.a}</dd></>))}
+    </dl>
+
+    <h2>How to use this</h2>
+    <ul>
+      <li>Ask the provider whether the course issues the endorsement you need to take the written test, and how long access lasts.</li>
+      <li>Read the guarantee's conditions, not its headline. Time limits (for example testing within 7 or 30 days) and what is refunded vary.</li>
+      <li>Check the price on the provider's own page on the day you buy. Several providers show a crossed-out price and none of the pages we read said when a sale ends.</li>
+      <li>Your flight school may bundle or recommend a course. Ask what it costs through the school before you buy separately.</li>
+    </ul>
+    <p class="small">Sources are listed under <a href="/how-we-compare/">how we compare</a> and each row links to the page we read. If a price here is out of date, <a href="/corrections/">tell us</a>.</p>
+  </div>
+</BaseLayout>

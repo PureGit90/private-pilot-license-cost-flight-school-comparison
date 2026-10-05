@@ -1,0 +1,28 @@
+{
+  "name": "Complete Private Pilot Course",
+  "provider": "King Schools",
+  "kind": "full-course",
+  "summary": "Written test, checkride and maneuvers courses with lifetime access and no subscription.",
+  "url": "https://kingschools.com/private-pilot-certificate",
+  "price": 349,
+  "priceLabel": "$349",
+  "accessTerm": "Free lifetime course access and automatic updates, no subscriptions",
+  "endorsement": "not-stated",
+  "endorsementNote": "The page does not mention a written test endorsement.",
+  "guarantee": "Says \"100% money-back guarantee\". The conditions are not stated on the page we read.",
+  "includes": [
+    "Private Pilot Online Ground School and Test Prep",
+    "Private Pilot Practical Test (checkride) prep",
+    "Maneuvers for Private Pilot",
+    "King Schools Online Aviation Library",
+    "Unlimited practice exams and a test prep app with flashcards"
+  ],
+  "watchOut": [
+    "The page does not state whether a written test endorsement is issued, although two comparison articles say it is.",
+    "Third-party comparison articles list this course at $249 and $299; the page showed $349."
+  ],
+  "lastChecked": "2026-10-04",
+  "sources": [
+    "https://kingschools.com/private-pilot-certificate"
+  ]
+}
