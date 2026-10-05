@@ -58,6 +58,7 @@ const endorsementLabel = (c: (typeof courses)[number]) => (c.data.endorsement ==
     </div>
 
     <h2>What each provider's page says</h2>
+    {courses.some((c) => c.data.affiliateUrl) && <p class="small"><strong>Disclosure:</strong> the {courses.filter((c) => c.data.affiliateUrl).map((c) => c.data.provider).join(' and ')} link in this table is an affiliate link. If you buy through it we may earn a commission at no extra cost to you. It does not change the order, which is by price. See the <a href="/affiliate-disclosure/">affiliate disclosure</a>.</p>}
     <div class="table-wrap">
       <table class="stack rate-table">
         <caption>Private pilot online courses and test prep, lowest price first</caption>
